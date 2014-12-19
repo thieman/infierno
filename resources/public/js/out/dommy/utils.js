@@ -5,26 +5,24 @@ goog.require('cljs.core');
 * Dissociate this keyseq from m, removing any empty maps created as a result
 * (including at the top-level).
 */
-dommy.utils.dissoc_in = (function dissoc_in(m,p__16884){
-var vec__16892 = p__16884;
-var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__16892,(0),null);
-var ks = cljs.core.nthnext(vec__16892,(1));
+dommy.utils.dissoc_in = (function dissoc_in(m,p__7583){
+var vec__7585 = p__7583;
+var k = cljs.core.nth.call(null,vec__7585,(0),null);
+var ks = cljs.core.nthnext.call(null,vec__7585,(1));
 if(cljs.core.truth_(m)){
 var temp__4124__auto__ = (function (){var and__3596__auto__ = ks;
 if(and__3596__auto__){
-return dissoc_in((function (){var G__16894 = k;
-return (m.cljs$core$IFn$_invoke$arity$1 ? m.cljs$core$IFn$_invoke$arity$1(G__16894) : m.call(null,G__16894));
-})(),ks);
+return dissoc_in.call(null,m.call(null,k),ks);
 } else {
 return and__3596__auto__;
 }
 })();
 if(cljs.core.truth_(temp__4124__auto__)){
 var res = temp__4124__auto__;
-return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(m,k,res);
+return cljs.core.assoc.call(null,m,k,res);
 } else {
-var res = cljs.core.dissoc.cljs$core$IFn$_invoke$arity$2(m,k);
-if(cljs.core.empty_QMARK_(res)){
+var res = cljs.core.dissoc.call(null,m,k);
+if(cljs.core.empty_QMARK_.call(null,res)){
 return null;
 } else {
 return res;
@@ -43,10 +41,10 @@ return Array.prototype.slice.call(array_like);
 */
 dommy.utils.as_str = (function as_str(s){
 if((s instanceof cljs.core.Keyword)){
-return [cljs.core.str((function (){var G__16896 = cljs.core.namespace(s);
-var G__16896__$1 = (((G__16896 == null))?null:[cljs.core.str(G__16896),cljs.core.str("/")].join(''));
-return G__16896__$1;
-})()),cljs.core.str(cljs.core.name(s))].join('');
+return [cljs.core.str((function (){var G__7587 = cljs.core.namespace.call(null,s);
+var G__7587__$1 = (((G__7587 == null))?null:[cljs.core.str(G__7587),cljs.core.str("/")].join(''));
+return G__7587__$1;
+})()),cljs.core.str(cljs.core.name.call(null,s))].join('');
 } else {
 return s;
 }
@@ -78,11 +76,11 @@ var start_from = (0);
 while(true){
 var i = class_name.indexOf(class$,start_from);
 if((i >= (0))){
-if(dommy.utils.class_match_QMARK_(class_name,class$,i)){
+if(dommy.utils.class_match_QMARK_.call(null,class_name,class$,i)){
 return i;
 } else {
-var G__16897 = (i + class$.length);
-start_from = G__16897;
+var G__7588 = (i + class$.length);
+start_from = G__7588;
 continue;
 }
 } else {
@@ -95,13 +93,13 @@ dommy.utils.remove_class_str = (function remove_class_str(init_class_name,class$
 var class_name = init_class_name;
 while(true){
 var class_len = class_name.length;
-var temp__4124__auto__ = dommy.utils.class_index(class_name,class$);
+var temp__4124__auto__ = dommy.utils.class_index.call(null,class_name,class$);
 if(cljs.core.truth_(temp__4124__auto__)){
 var i = temp__4124__auto__;
-var G__16898 = (function (){var end = (i + class$.length);
+var G__7589 = (function (){var end = (i + class$.length);
 return [cljs.core.str((((end < class_len))?[cljs.core.str(class_name.substring((0),i)),cljs.core.str(class_name.substr((end + (1))))].join(''):class_name.substring((0),(i - (1)))))].join('');
 })();
-class_name = G__16898;
+class_name = G__7589;
 continue;
 } else {
 return class_name;

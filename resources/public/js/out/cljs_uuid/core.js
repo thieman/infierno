@@ -12,11 +12,11 @@ goog.require('goog.string.StringBuffer');
 */
 cljs_uuid.core.make_random = (function make_random(){
 var f = (function f(){
-return cljs.core.rand_int((16)).toString((16));
+return cljs.core.rand_int.call(null,(16)).toString((16));
 });
 var g = (function g(){
-return ((8) | ((3) & cljs.core.rand_int((15)))).toString((16));
+return ((8) | ((3) & cljs.core.rand_int.call(null,(15)))).toString((16));
 });
-return (new cljs.core.UUID((new goog.string.StringBuffer(f(),f(),f(),f(),f(),f(),f(),f(),"-",f(),f(),f(),f(),"-4",f(),f(),f(),"-",g(),f(),f(),f(),"-",f(),f(),f(),f(),f(),f(),f(),f(),f(),f(),f(),f())).toString()));
+return (new cljs.core.UUID((new goog.string.StringBuffer(f.call(null),f.call(null),f.call(null),f.call(null),f.call(null),f.call(null),f.call(null),f.call(null),"-",f.call(null),f.call(null),f.call(null),f.call(null),"-4",f.call(null),f.call(null),f.call(null),"-",g.call(null),f.call(null),f.call(null),f.call(null),"-",f.call(null),f.call(null),f.call(null),f.call(null),f.call(null),f.call(null),f.call(null),f.call(null),f.call(null),f.call(null),f.call(null),f.call(null))).toString()));
 });
 cljs_uuid.core.make_v4 = cljs_uuid.core.make_random;

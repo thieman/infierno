@@ -14,7 +14,8 @@
      :y1 (cond
           (some #{"up"} keys) -1
           (some #{"down"} keys) 1
-          :else 0)}))
+          :else 0)
+     :shot (boolean (some #{"space"} keys))}))
 
 (defn get-input []
   (if-let [gamepad (aget (.getGamepads js/navigator) 0)]

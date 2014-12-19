@@ -15,7 +15,7 @@
     :builds {
       :main {
         :source-paths ["src/cljs"]
-        :compiler {:optimizations :advanced
+        :compiler {:optimizations :simple
                    :output-to "resources/public/js/infierno.js"
                    :output-dir "resources/public/js/out"
                    :source-map "resources/public/js/infierno.js.map"
