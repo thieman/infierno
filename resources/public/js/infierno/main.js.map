@@ -1,0 +1,10 @@
+{"version":3,
+ "file":"/repos/infierno/resources/public/js/infierno/main.js",
+ "sources":["main.cljs"],
+ "lineCount":12,
+ "mappings":
+ ";AAAA;;;;;;AAIA,AAAKA,wBACH,KAAAC,4BAAA,uEAAA,GAAA,GAAA,EAAA;AAGF,AAAKC,wBACH,iGAAA,hFAAMC,SAAO,kEAAA,EAAA,pEAACC,4CAAaJ,2BACzB,OAACK,kCAAcC,cAAaH",
+ "names":
+ ["infierno.main/sprites", "infierno.sprite/Spritesheet",
+  "infierno.main/crystal", "sprite", "infierno.sprite/make-sprite!",
+  "dommy.core/append!", "js/document.body"]}

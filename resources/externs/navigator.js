@@ -1,0 +1,1 @@
+navigator.getGamepads = function(){};

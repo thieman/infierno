@@ -1,0 +1,7 @@
+{"version":3,
+ "file":"/repos/infierno/resources/public/js/hipo.js",
+ "sources":["hipo.cljs"],
+ "lineCount":9,
+ "mappings":
+ ";AAAA;;;;AAGA,iCAAA,wCAAA,AAAA,zEAAMA,qEACHC,IAED,OAACC,6BAAQ,IAAA,HAAMD",
+ "names":["hipo/partially-compiled?", "el", "cljs.core/boolean"]}
