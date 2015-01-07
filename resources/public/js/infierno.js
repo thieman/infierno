@@ -21653,7 +21653,7 @@ infierno.character.Character.prototype.infierno$protocol$Movable$move_frame$arit
 };
 infierno.character.Character.prototype.infierno$protocol$Collidable$ = !0;
 infierno.character.Character.prototype.infierno$protocol$Collidable$collides_with$arity$2 = function(a, b) {
-  return infierno.protocol.collides_with.call(null, (new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(this), b);
+  return infierno.protocol.collides_with.call(null, (new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(this), (new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(b));
 };
 infierno.character.Character.prototype.cljs$core$IMap$_dissoc$arity$2 = function(a, b) {
   return cljs.core.contains_QMARK_.call(null, new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "sprite", "sprite", 172516848), null, new cljs.core.Keyword(null, "team", "team", 1355747699), null], null), null), b) ? cljs.core.dissoc.call(null, cljs.core.with_meta.call(null, cljs.core.into.call(null, cljs.core.PersistentArrayMap.EMPTY, this), this.__meta), b) : new infierno.character.Character(this.sprite, this.team, this.__meta, cljs.core.not_empty.call(null, 

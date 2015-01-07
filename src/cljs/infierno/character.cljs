@@ -13,8 +13,8 @@
     (move-frame (:sprite self) dx dy))
 
   Collidable
-  (collides-with [self sprite]
-    (collides-with (:sprite self) sprite))
+  (collides-with [self bullet]
+    (collides-with (:sprite self) (:sprite bullet)))
 
   Shoots
   (shoot [self] self))
