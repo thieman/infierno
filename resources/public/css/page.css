@@ -4,6 +4,18 @@ body {
     overflow: hidden;
 }
 
+#game {
+    position: relative;
+    overflow: hidden;
+    width: 600px;
+    height: 800px;
+    border: 1px solid black;
+}
+
+.infierno-sprite {
+    position: absolute;
+}
+
 canvas {
     border: 1px solid black;
     margin: 20px;
