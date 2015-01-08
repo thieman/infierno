@@ -20284,6 +20284,532 @@ cljs_uuid.core.make_random = function() {
   }.call(null), a.call(null), a.call(null), a.call(null), "-", a.call(null), a.call(null), a.call(null), a.call(null), a.call(null), a.call(null), a.call(null), a.call(null), a.call(null), a.call(null), a.call(null), a.call(null))).toString());
 };
 cljs_uuid.core.make_v4 = cljs_uuid.core.make_random;
+var infierno = {protocol:{}};
+infierno.protocol.Renderable = function() {
+  return{};
+}();
+infierno.protocol.render_BANG_ = function(a) {
+  if (a ? a.infierno$protocol$Renderable$render_BANG_$arity$1 : a) {
+    return a.infierno$protocol$Renderable$render_BANG_$arity$1(a);
+  }
+  var b;
+  b = infierno.protocol.render_BANG_[goog.typeOf(null == a ? null : a)];
+  if (!b && (b = infierno.protocol.render_BANG_._, !b)) {
+    throw cljs.core.missing_protocol.call(null, "Renderable.render!", a);
+  }
+  return b.call(null, a);
+};
+infierno.protocol.hide_BANG_ = function(a) {
+  if (a ? a.infierno$protocol$Renderable$hide_BANG_$arity$1 : a) {
+    return a.infierno$protocol$Renderable$hide_BANG_$arity$1(a);
+  }
+  var b;
+  b = infierno.protocol.hide_BANG_[goog.typeOf(null == a ? null : a)];
+  if (!b && (b = infierno.protocol.hide_BANG_._, !b)) {
+    throw cljs.core.missing_protocol.call(null, "Renderable.hide!", a);
+  }
+  return b.call(null, a);
+};
+infierno.protocol.Movable = function() {
+  return{};
+}();
+infierno.protocol.move_frame = function() {
+  var a = null, b = function(a) {
+    if (a ? a.infierno$protocol$Movable$move_frame$arity$1 : a) {
+      return a.infierno$protocol$Movable$move_frame$arity$1(a);
+    }
+    var b;
+    b = infierno.protocol.move_frame[goog.typeOf(null == a ? null : a)];
+    if (!b && (b = infierno.protocol.move_frame._, !b)) {
+      throw cljs.core.missing_protocol.call(null, "Movable.move-frame", a);
+    }
+    return b.call(null, a);
+  }, c = function(a, b, c) {
+    if (a ? a.infierno$protocol$Movable$move_frame$arity$3 : a) {
+      return a.infierno$protocol$Movable$move_frame$arity$3(a, b, c);
+    }
+    var g;
+    g = infierno.protocol.move_frame[goog.typeOf(null == a ? null : a)];
+    if (!g && (g = infierno.protocol.move_frame._, !g)) {
+      throw cljs.core.missing_protocol.call(null, "Movable.move-frame", a);
+    }
+    return g.call(null, a, b, c);
+  }, a = function(a, e, f) {
+    switch(arguments.length) {
+      case 1:
+        return b.call(this, a);
+      case 3:
+        return c.call(this, a, e, f);
+    }
+    throw Error("Invalid arity: " + arguments.length);
+  };
+  a.cljs$core$IFn$_invoke$arity$1 = b;
+  a.cljs$core$IFn$_invoke$arity$3 = c;
+  return a;
+}();
+infierno.protocol.out_of_bounds_QMARK_ = function(a, b, c) {
+  if (a ? a.infierno$protocol$Movable$out_of_bounds_QMARK_$arity$3 : a) {
+    return a.infierno$protocol$Movable$out_of_bounds_QMARK_$arity$3(a, b, c);
+  }
+  var d;
+  d = infierno.protocol.out_of_bounds_QMARK_[goog.typeOf(null == a ? null : a)];
+  if (!d && (d = infierno.protocol.out_of_bounds_QMARK_._, !d)) {
+    throw cljs.core.missing_protocol.call(null, "Movable.out-of-bounds?", a);
+  }
+  return d.call(null, a, b, c);
+};
+infierno.protocol.Collidable = function() {
+  return{};
+}();
+infierno.protocol.collides_with = function(a, b) {
+  if (a ? a.infierno$protocol$Collidable$collides_with$arity$2 : a) {
+    return a.infierno$protocol$Collidable$collides_with$arity$2(a, b);
+  }
+  var c;
+  c = infierno.protocol.collides_with[goog.typeOf(null == a ? null : a)];
+  if (!c && (c = infierno.protocol.collides_with._, !c)) {
+    throw cljs.core.missing_protocol.call(null, "Collidable.collides-with", a);
+  }
+  return c.call(null, a, b);
+};
+infierno.protocol.Controllable = function() {
+  return{};
+}();
+infierno.protocol.control_move = function(a, b, c, d) {
+  if (a ? a.infierno$protocol$Controllable$control_move$arity$4 : a) {
+    return a.infierno$protocol$Controllable$control_move$arity$4(a, b, c, d);
+  }
+  var e;
+  e = infierno.protocol.control_move[goog.typeOf(null == a ? null : a)];
+  if (!e && (e = infierno.protocol.control_move._, !e)) {
+    throw cljs.core.missing_protocol.call(null, "Controllable.control-move", a);
+  }
+  return e.call(null, a, b, c, d);
+};
+infierno.protocol.shoot = function(a) {
+  if (a ? a.infierno$protocol$Controllable$shoot$arity$1 : a) {
+    return a.infierno$protocol$Controllable$shoot$arity$1(a);
+  }
+  var b;
+  b = infierno.protocol.shoot[goog.typeOf(null == a ? null : a)];
+  if (!b && (b = infierno.protocol.shoot._, !b)) {
+    throw cljs.core.missing_protocol.call(null, "Controllable.shoot", a);
+  }
+  return b.call(null, a);
+};
+infierno.sprite = {};
+infierno.sprite.Spritesheet = function(a, b, c, d, e, f, g) {
+  this.url = a;
+  this.height = b;
+  this.width = c;
+  this.rows = d;
+  this.columns = e;
+  this.__meta = f;
+  this.__extmap = g;
+  this.cljs$lang$protocol_mask$partition0$ = 2229667594;
+  this.cljs$lang$protocol_mask$partition1$ = 8192;
+  5 < arguments.length ? (this.__meta = f, this.__extmap = g) : this.__extmap = this.__meta = null;
+};
+infierno.sprite.Spritesheet.prototype.cljs$core$ILookup$_lookup$arity$2 = function(a, b) {
+  return cljs.core._lookup.call(null, this, b, null);
+};
+infierno.sprite.Spritesheet.prototype.cljs$core$ILookup$_lookup$arity$3 = function(a, b, c) {
+  switch(b instanceof cljs.core.Keyword ? b.fqn : null) {
+    case "columns":
+      return this.columns;
+    case "rows":
+      return this.rows;
+    case "width":
+      return this.width;
+    case "height":
+      return this.height;
+    case "url":
+      return this.url;
+    default:
+      return cljs.core.get.call(null, this.__extmap, b, c);
+  }
+};
+infierno.sprite.Spritesheet.prototype.cljs$core$IPrintWithWriter$_pr_writer$arity$3 = function(a, b, c) {
+  a = function(a) {
+    return function(a) {
+      return cljs.core.pr_sequential_writer.call(null, b, cljs.core.pr_writer, "", " ", "", c, a);
+    };
+  }(this);
+  return cljs.core.pr_sequential_writer.call(null, b, a, "#infierno.sprite.Spritesheet{", ", ", "}", c, cljs.core.concat.call(null, new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "url", "url", 276297046), this.url], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "height", "height", 
+  1025178622), this.height], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "width", "width", -384071477), this.width], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "rows", "rows", 850049680), this.rows], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "columns", "columns", 1998437288), 
+  this.columns], null)], null), this.__extmap));
+};
+infierno.sprite.Spritesheet.prototype.cljs$core$IMeta$_meta$arity$1 = function(a) {
+  return this.__meta;
+};
+infierno.sprite.Spritesheet.prototype.cljs$core$ICloneable$_clone$arity$1 = function(a) {
+  return new infierno.sprite.Spritesheet(this.url, this.height, this.width, this.rows, this.columns, this.__meta, this.__extmap, this.__hash);
+};
+infierno.sprite.Spritesheet.prototype.cljs$core$ICounted$_count$arity$1 = function(a) {
+  return 5 + cljs.core.count.call(null, this.__extmap);
+};
+infierno.sprite.Spritesheet.prototype.cljs$core$IHash$_hash$arity$1 = function(a) {
+  a = this.__hash;
+  return null != a ? a : this.__hash = a = cljs.core.hash_imap.call(null, this);
+};
+infierno.sprite.Spritesheet.prototype.cljs$core$IEquiv$_equiv$arity$2 = function(a, b) {
+  return cljs.core.truth_(cljs.core.truth_(b) ? this.constructor === b.constructor && cljs.core.equiv_map.call(null, this, b) : b) ? !0 : !1;
+};
+infierno.sprite.Spritesheet.prototype.cljs$core$IMap$_dissoc$arity$2 = function(a, b) {
+  return cljs.core.contains_QMARK_.call(null, new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null, "columns", "columns", 1998437288), null, new cljs.core.Keyword(null, "width", "width", -384071477), null, new cljs.core.Keyword(null, "rows", "rows", 850049680), null, new cljs.core.Keyword(null, "url", "url", 276297046), null, new cljs.core.Keyword(null, "height", "height", 1025178622), null], null), null), b) ? cljs.core.dissoc.call(null, cljs.core.with_meta.call(null, 
+  cljs.core.into.call(null, cljs.core.PersistentArrayMap.EMPTY, this), this.__meta), b) : new infierno.sprite.Spritesheet(this.url, this.height, this.width, this.rows, this.columns, this.__meta, cljs.core.not_empty.call(null, cljs.core.dissoc.call(null, this.__extmap, b)), null);
+};
+infierno.sprite.Spritesheet.prototype.cljs$core$IAssociative$_assoc$arity$3 = function(a, b, c) {
+  a = cljs.core.keyword_identical_QMARK_;
+  return cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "url", "url", 276297046), b)) ? new infierno.sprite.Spritesheet(c, this.height, this.width, this.rows, this.columns, this.__meta, this.__extmap, null) : cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "height", "height", 1025178622), b)) ? new infierno.sprite.Spritesheet(this.url, c, this.width, this.rows, this.columns, this.__meta, this.__extmap, null) : cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "width", 
+  "width", -384071477), b)) ? new infierno.sprite.Spritesheet(this.url, this.height, c, this.rows, this.columns, this.__meta, this.__extmap, null) : cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "rows", "rows", 850049680), b)) ? new infierno.sprite.Spritesheet(this.url, this.height, this.width, c, this.columns, this.__meta, this.__extmap, null) : cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "columns", "columns", 1998437288), b)) ? new infierno.sprite.Spritesheet(this.url, 
+  this.height, this.width, this.rows, c, this.__meta, this.__extmap, null) : new infierno.sprite.Spritesheet(this.url, this.height, this.width, this.rows, this.columns, this.__meta, cljs.core.assoc.call(null, this.__extmap, b, c), null);
+};
+infierno.sprite.Spritesheet.prototype.cljs$core$ISeqable$_seq$arity$1 = function(a) {
+  return cljs.core.seq.call(null, cljs.core.concat.call(null, new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "url", "url", 276297046), this.url], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "height", "height", 1025178622), this.height], null), new cljs.core.PersistentVector(null, 
+  2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "width", "width", -384071477), this.width], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "rows", "rows", 850049680), this.rows], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "columns", "columns", 1998437288), this.columns], null)], null), this.__extmap));
+};
+infierno.sprite.Spritesheet.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(a, b) {
+  return new infierno.sprite.Spritesheet(this.url, this.height, this.width, this.rows, this.columns, b, this.__extmap, this.__hash);
+};
+infierno.sprite.Spritesheet.prototype.cljs$core$ICollection$_conj$arity$2 = function(a, b) {
+  return cljs.core.vector_QMARK_.call(null, b) ? cljs.core._assoc.call(null, this, cljs.core._nth.call(null, b, 0), cljs.core._nth.call(null, b, 1)) : cljs.core.reduce.call(null, cljs.core._conj, this, b);
+};
+infierno.sprite.Spritesheet.cljs$lang$type = !0;
+infierno.sprite.Spritesheet.cljs$lang$ctorPrSeq = function(a) {
+  return cljs.core._conj.call(null, cljs.core.List.EMPTY, "infierno.sprite/Spritesheet");
+};
+infierno.sprite.Spritesheet.cljs$lang$ctorPrWriter = function(a, b) {
+  return cljs.core._write.call(null, b, "infierno.sprite/Spritesheet");
+};
+infierno.sprite.__GT_Spritesheet = function(a, b, c, d, e) {
+  return new infierno.sprite.Spritesheet(a, b, c, d, e);
+};
+infierno.sprite.map__GT_Spritesheet = function(a) {
+  return new infierno.sprite.Spritesheet((new cljs.core.Keyword(null, "url", "url", 276297046)).cljs$core$IFn$_invoke$arity$1(a), (new cljs.core.Keyword(null, "height", "height", 1025178622)).cljs$core$IFn$_invoke$arity$1(a), (new cljs.core.Keyword(null, "width", "width", -384071477)).cljs$core$IFn$_invoke$arity$1(a), (new cljs.core.Keyword(null, "rows", "rows", 850049680)).cljs$core$IFn$_invoke$arity$1(a), (new cljs.core.Keyword(null, "columns", "columns", 1998437288)).cljs$core$IFn$_invoke$arity$1(a), 
+  null, cljs.core.dissoc.call(null, a, new cljs.core.Keyword(null, "url", "url", 276297046), new cljs.core.Keyword(null, "height", "height", 1025178622), new cljs.core.Keyword(null, "width", "width", -384071477), new cljs.core.Keyword(null, "rows", "rows", 850049680), new cljs.core.Keyword(null, "columns", "columns", 1998437288)));
+};
+var group__5595__auto___10777 = cljs.core.swap_BANG_.call(null, crate.core.group_id, cljs.core.inc);
+infierno.sprite.sprite_template = function(a) {
+  return function(b, c) {
+    var d = crate.core.html.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1057191632), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "id", "id", -1388402092), b, new cljs.core.Keyword(null, "class", "class", -2030961996), "infierno-sprite", new cljs.core.Keyword(null, "style", "style", -496642736), c], null)], null));
+    d.setAttribute("crateGroup", a);
+    return d;
+  };
+}(group__5595__auto___10777);
+infierno.sprite.sprite_template.prototype._crateGroup = group__5595__auto___10777;
+infierno.sprite.style_options = function(a) {
+  var b = function() {
+    return function d(a) {
+      return new cljs.core.LazySeq(null, function() {
+        for (;;) {
+          var b = cljs.core.seq.call(null, a);
+          if (b) {
+            if (cljs.core.chunked_seq_QMARK_.call(null, b)) {
+              var g = cljs.core.chunk_first.call(null, b), h = cljs.core.count.call(null, g), k = cljs.core.chunk_buffer.call(null, h);
+              a: {
+                for (var l = 0;;) {
+                  if (l < h) {
+                    var m = cljs.core._nth.call(null, g, l), n = cljs.core.nth.call(null, m, 0, null), m = cljs.core.nth.call(null, m, 1, null);
+                    cljs.core.chunk_append.call(null, k, clojure.string.join.call(null, "", new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.name.call(null, n), ": ", m, ";"], null)));
+                    l += 1;
+                  } else {
+                    g = !0;
+                    break a;
+                  }
+                }
+                g = void 0;
+              }
+              return g ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, k), d.call(null, cljs.core.chunk_rest.call(null, b))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, k), null);
+            }
+            g = cljs.core.first.call(null, b);
+            k = cljs.core.nth.call(null, g, 0, null);
+            g = cljs.core.nth.call(null, g, 1, null);
+            return cljs.core.cons.call(null, clojure.string.join.call(null, "", new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.name.call(null, k), ": ", g, ";"], null)), d.call(null, cljs.core.rest.call(null, b)));
+          }
+          return null;
+        }
+      }, null, null);
+    }.call(null, a);
+  }();
+  return clojure.string.join.call(null, b);
+};
+infierno.sprite.add_px = function(a, b) {
+  return parseFloat(a) + b + "px";
+};
+infierno.sprite.bounding = function(a) {
+  return new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "top", "top", -1856271961), parseFloat(a.style.top), new cljs.core.Keyword(null, "left", "left", -399115937), parseFloat(a.style.left), new cljs.core.Keyword(null, "width", "width", -384071477), parseFloat(a.style.width), new cljs.core.Keyword(null, "height", "height", 1025178622), parseFloat(a.style.height)], null);
+};
+infierno.sprite.Sprite = function(a, b, c, d, e, f, g) {
+  this.dom_parent = a;
+  this.spritesheet = b;
+  this.row = c;
+  this.column = d;
+  this.render_options = e;
+  this.__meta = f;
+  this.__extmap = g;
+  this.cljs$lang$protocol_mask$partition0$ = 2229667594;
+  this.cljs$lang$protocol_mask$partition1$ = 8192;
+  5 < arguments.length ? (this.__meta = f, this.__extmap = g) : this.__extmap = this.__meta = null;
+};
+infierno.sprite.Sprite.prototype.cljs$core$ILookup$_lookup$arity$2 = function(a, b) {
+  return cljs.core._lookup.call(null, this, b, null);
+};
+infierno.sprite.Sprite.prototype.cljs$core$ILookup$_lookup$arity$3 = function(a, b, c) {
+  switch(b instanceof cljs.core.Keyword ? b.fqn : null) {
+    case "render-options":
+      return this.render_options;
+    case "column":
+      return this.column;
+    case "row":
+      return this.row;
+    case "spritesheet":
+      return this.spritesheet;
+    case "dom-parent":
+      return this.dom_parent;
+    default:
+      return cljs.core.get.call(null, this.__extmap, b, c);
+  }
+};
+infierno.sprite.Sprite.prototype.cljs$core$IPrintWithWriter$_pr_writer$arity$3 = function(a, b, c) {
+  a = function(a) {
+    return function(a) {
+      return cljs.core.pr_sequential_writer.call(null, b, cljs.core.pr_writer, "", " ", "", c, a);
+    };
+  }(this);
+  return cljs.core.pr_sequential_writer.call(null, b, a, "#infierno.sprite.Sprite{", ", ", "}", c, cljs.core.concat.call(null, new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "dom-parent", "dom-parent", -1899682061), this.dom_parent], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "spritesheet", 
+  "spritesheet", -542003038), this.spritesheet], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "row", "row", -570139521), this.row], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "column", "column", 2078222095), this.column], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "render-options", 
+  "render-options", 686799147), this.render_options], null)], null), this.__extmap));
+};
+infierno.sprite.Sprite.prototype.cljs$core$IMeta$_meta$arity$1 = function(a) {
+  return this.__meta;
+};
+infierno.sprite.Sprite.prototype.cljs$core$ICloneable$_clone$arity$1 = function(a) {
+  return new infierno.sprite.Sprite(this.dom_parent, this.spritesheet, this.row, this.column, this.render_options, this.__meta, this.__extmap, this.__hash);
+};
+infierno.sprite.Sprite.prototype.cljs$core$ICounted$_count$arity$1 = function(a) {
+  return 5 + cljs.core.count.call(null, this.__extmap);
+};
+infierno.sprite.Sprite.prototype.cljs$core$IHash$_hash$arity$1 = function(a) {
+  a = this.__hash;
+  return null != a ? a : this.__hash = a = cljs.core.hash_imap.call(null, this);
+};
+infierno.sprite.Sprite.prototype.cljs$core$IEquiv$_equiv$arity$2 = function(a, b) {
+  return cljs.core.truth_(cljs.core.truth_(b) ? this.constructor === b.constructor && cljs.core.equiv_map.call(null, this, b) : b) ? !0 : !1;
+};
+infierno.sprite.Sprite.prototype.infierno$protocol$Movable$ = !0;
+infierno.sprite.Sprite.prototype.infierno$protocol$Movable$move_frame$arity$3 = function(a, b, c) {
+  a = (new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1(this).style.top;
+  var d = (new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1(this).style.left;
+  (new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1(this).style.setProperty("top", infierno.sprite.add_px.call(null, a, c));
+  return(new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1(this).style.setProperty("left", infierno.sprite.add_px.call(null, d, b));
+};
+infierno.sprite.Sprite.prototype.infierno$protocol$Movable$out_of_bounds_QMARK_$arity$3 = function(a, b, c) {
+  a = parseFloat((new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1(this).style.top);
+  var d = parseFloat((new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1(this).style.left), e = parseFloat((new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1(this).style.width), f = parseFloat((new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1(this).style.height);
+  return 0 > a + f || a > c || 0 > d + e || d > b;
+};
+infierno.sprite.Sprite.prototype.infierno$protocol$Collidable$ = !0;
+infierno.sprite.Sprite.prototype.infierno$protocol$Collidable$collides_with$arity$2 = function(a, b) {
+  var c = infierno.sprite.bounding.call(null, (new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1(this)), d = infierno.sprite.bounding.call(null, (new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1(b));
+  return!((new cljs.core.Keyword(null, "left", "left", -399115937)).cljs$core$IFn$_invoke$arity$1(d) > (new cljs.core.Keyword(null, "width", "width", -384071477)).cljs$core$IFn$_invoke$arity$1(c) + (new cljs.core.Keyword(null, "left", "left", -399115937)).cljs$core$IFn$_invoke$arity$1(c) || (new cljs.core.Keyword(null, "left", "left", -399115937)).cljs$core$IFn$_invoke$arity$1(d) + (new cljs.core.Keyword(null, "width", "width", -384071477)).cljs$core$IFn$_invoke$arity$1(d) < (new cljs.core.Keyword(null, 
+  "left", "left", -399115937)).cljs$core$IFn$_invoke$arity$1(c) || (new cljs.core.Keyword(null, "top", "top", -1856271961)).cljs$core$IFn$_invoke$arity$1(d) > (new cljs.core.Keyword(null, "top", "top", -1856271961)).cljs$core$IFn$_invoke$arity$1(c) + (new cljs.core.Keyword(null, "height", "height", 1025178622)).cljs$core$IFn$_invoke$arity$1(c) || (new cljs.core.Keyword(null, "top", "top", -1856271961)).cljs$core$IFn$_invoke$arity$1(d) + (new cljs.core.Keyword(null, "height", "height", 1025178622)).cljs$core$IFn$_invoke$arity$1(d) < 
+  (new cljs.core.Keyword(null, "top", "top", -1856271961)).cljs$core$IFn$_invoke$arity$1(c));
+};
+infierno.sprite.Sprite.prototype.cljs$core$IMap$_dissoc$arity$2 = function(a, b) {
+  return cljs.core.contains_QMARK_.call(null, new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null, "spritesheet", "spritesheet", -542003038), null, new cljs.core.Keyword(null, "render-options", "render-options", 686799147), null, new cljs.core.Keyword(null, "column", "column", 2078222095), null, new cljs.core.Keyword(null, "dom-parent", "dom-parent", -1899682061), null, new cljs.core.Keyword(null, "row", "row", -570139521), null], null), null), 
+  b) ? cljs.core.dissoc.call(null, cljs.core.with_meta.call(null, cljs.core.into.call(null, cljs.core.PersistentArrayMap.EMPTY, this), this.__meta), b) : new infierno.sprite.Sprite(this.dom_parent, this.spritesheet, this.row, this.column, this.render_options, this.__meta, cljs.core.not_empty.call(null, cljs.core.dissoc.call(null, this.__extmap, b)), null);
+};
+infierno.sprite.Sprite.prototype.cljs$core$IAssociative$_assoc$arity$3 = function(a, b, c) {
+  a = cljs.core.keyword_identical_QMARK_;
+  return cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "dom-parent", "dom-parent", -1899682061), b)) ? new infierno.sprite.Sprite(c, this.spritesheet, this.row, this.column, this.render_options, this.__meta, this.__extmap, null) : cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "spritesheet", "spritesheet", -542003038), b)) ? new infierno.sprite.Sprite(this.dom_parent, c, this.row, this.column, this.render_options, this.__meta, this.__extmap, null) : cljs.core.truth_(a.call(null, 
+  new cljs.core.Keyword(null, "row", "row", -570139521), b)) ? new infierno.sprite.Sprite(this.dom_parent, this.spritesheet, c, this.column, this.render_options, this.__meta, this.__extmap, null) : cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "column", "column", 2078222095), b)) ? new infierno.sprite.Sprite(this.dom_parent, this.spritesheet, this.row, c, this.render_options, this.__meta, this.__extmap, null) : cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "render-options", 
+  "render-options", 686799147), b)) ? new infierno.sprite.Sprite(this.dom_parent, this.spritesheet, this.row, this.column, c, this.__meta, this.__extmap, null) : new infierno.sprite.Sprite(this.dom_parent, this.spritesheet, this.row, this.column, this.render_options, this.__meta, cljs.core.assoc.call(null, this.__extmap, b, c), null);
+};
+infierno.sprite.Sprite.prototype.cljs$core$ISeqable$_seq$arity$1 = function(a) {
+  return cljs.core.seq.call(null, cljs.core.concat.call(null, new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "dom-parent", "dom-parent", -1899682061), this.dom_parent], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "spritesheet", "spritesheet", -542003038), this.spritesheet], null), 
+  new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "row", "row", -570139521), this.row], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "column", "column", 2078222095), this.column], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "render-options", "render-options", 686799147), this.render_options], 
+  null)], null), this.__extmap));
+};
+infierno.sprite.Sprite.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(a, b) {
+  return new infierno.sprite.Sprite(this.dom_parent, this.spritesheet, this.row, this.column, this.render_options, b, this.__extmap, this.__hash);
+};
+infierno.sprite.Sprite.prototype.cljs$core$ICollection$_conj$arity$2 = function(a, b) {
+  return cljs.core.vector_QMARK_.call(null, b) ? cljs.core._assoc.call(null, this, cljs.core._nth.call(null, b, 0), cljs.core._nth.call(null, b, 1)) : cljs.core.reduce.call(null, cljs.core._conj, this, b);
+};
+infierno.sprite.Sprite.prototype.infierno$protocol$Renderable$ = !0;
+infierno.sprite.Sprite.prototype.infierno$protocol$Renderable$render_BANG_$arity$1 = function(a) {
+  a = cljs_uuid.core.make_random.call(null);
+  var b = infierno.sprite.sprite_template.call(null, a, infierno.sprite.style_options.call(null, (new cljs.core.Keyword(null, "render-options", "render-options", 686799147)).cljs$core$IFn$_invoke$arity$1(this)));
+  (new cljs.core.Keyword(null, "dom-parent", "dom-parent", -1899682061)).cljs$core$IFn$_invoke$arity$1(this).appendChild(b);
+  return cljs.core.assoc.call(null, this, new cljs.core.Keyword(null, "dom-id", "dom-id", -1588236703), a, new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914), b);
+};
+infierno.sprite.Sprite.prototype.infierno$protocol$Renderable$hide_BANG_$arity$1 = function(a) {
+  (new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1(this).style.setProperty("display", "none");
+  return this;
+};
+infierno.sprite.Sprite.cljs$lang$type = !0;
+infierno.sprite.Sprite.cljs$lang$ctorPrSeq = function(a) {
+  return cljs.core._conj.call(null, cljs.core.List.EMPTY, "infierno.sprite/Sprite");
+};
+infierno.sprite.Sprite.cljs$lang$ctorPrWriter = function(a, b) {
+  return cljs.core._write.call(null, b, "infierno.sprite/Sprite");
+};
+infierno.sprite.__GT_Sprite = function(a, b, c, d, e) {
+  return new infierno.sprite.Sprite(a, b, c, d, e);
+};
+infierno.sprite.map__GT_Sprite = function(a) {
+  return new infierno.sprite.Sprite((new cljs.core.Keyword(null, "dom-parent", "dom-parent", -1899682061)).cljs$core$IFn$_invoke$arity$1(a), (new cljs.core.Keyword(null, "spritesheet", "spritesheet", -542003038)).cljs$core$IFn$_invoke$arity$1(a), (new cljs.core.Keyword(null, "row", "row", -570139521)).cljs$core$IFn$_invoke$arity$1(a), (new cljs.core.Keyword(null, "column", "column", 2078222095)).cljs$core$IFn$_invoke$arity$1(a), (new cljs.core.Keyword(null, "render-options", "render-options", 686799147)).cljs$core$IFn$_invoke$arity$1(a), 
+  null, cljs.core.dissoc.call(null, a, new cljs.core.Keyword(null, "dom-parent", "dom-parent", -1899682061), new cljs.core.Keyword(null, "spritesheet", "spritesheet", -542003038), new cljs.core.Keyword(null, "row", "row", -570139521), new cljs.core.Keyword(null, "column", "column", 2078222095), new cljs.core.Keyword(null, "render-options", "render-options", 686799147)));
+};
+infierno.sprite.make_sprite_BANG_ = function(a, b, c, d, e, f) {
+  e = new cljs.core.PersistentArrayMap(null, 7, [new cljs.core.Keyword(null, "width", "width", -384071477), clojure.string.join.call(null, "", new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(new cljs.core.Keyword(null, "width", "width", -384071477)).cljs$core$IFn$_invoke$arity$1(b), "px"], null)), new cljs.core.Keyword(null, "height", "height", 1025178622), clojure.string.join.call(null, "", new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, 
+  [(new cljs.core.Keyword(null, "height", "height", 1025178622)).cljs$core$IFn$_invoke$arity$1(b), "px"], null)), new cljs.core.Keyword(null, "position", "position", -2011731912), "absolute", new cljs.core.Keyword(null, "top", "top", -1856271961), clojure.string.join.call(null, "", new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [f, "px"], null)), new cljs.core.Keyword(null, "left", "left", -399115937), clojure.string.join.call(null, new cljs.core.PersistentVector(null, 
+  2, 5, cljs.core.PersistentVector.EMPTY_NODE, [e, "px"], null)), new cljs.core.Keyword(null, "background-image", "background-image", -1142314704), clojure.string.join.call(null, "", new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, ["url(", (new cljs.core.Keyword(null, "url", "url", 276297046)).cljs$core$IFn$_invoke$arity$1(b), ")"], null)), new cljs.core.Keyword(null, "background-position", "background-position", 1112702746), clojure.string.join.call(null, "", new cljs.core.PersistentVector(null, 
+  6, 5, cljs.core.PersistentVector.EMPTY_NODE, ["-", (c - 1) * (new cljs.core.Keyword(null, "width", "width", -384071477)).cljs$core$IFn$_invoke$arity$1(b), "px ", "-", (d - 1) * (new cljs.core.Keyword(null, "height", "height", 1025178622)).cljs$core$IFn$_invoke$arity$1(b), "px"], null))], null);
+  return new infierno.sprite.Sprite(a, b, d, c, e);
+};
+infierno.character = {};
+infierno.character.Character = function(a, b, c, d, e) {
+  this.sprite = a;
+  this.team = b;
+  this.speed = c;
+  this.__meta = d;
+  this.__extmap = e;
+  this.cljs$lang$protocol_mask$partition0$ = 2229667594;
+  this.cljs$lang$protocol_mask$partition1$ = 8192;
+  3 < arguments.length ? (this.__meta = d, this.__extmap = e) : this.__extmap = this.__meta = null;
+};
+infierno.character.Character.prototype.cljs$core$ILookup$_lookup$arity$2 = function(a, b) {
+  return cljs.core._lookup.call(null, this, b, null);
+};
+infierno.character.Character.prototype.cljs$core$ILookup$_lookup$arity$3 = function(a, b, c) {
+  switch(b instanceof cljs.core.Keyword ? b.fqn : null) {
+    case "speed":
+      return this.speed;
+    case "team":
+      return this.team;
+    case "sprite":
+      return this.sprite;
+    default:
+      return cljs.core.get.call(null, this.__extmap, b, c);
+  }
+};
+infierno.character.Character.prototype.cljs$core$IPrintWithWriter$_pr_writer$arity$3 = function(a, b, c) {
+  a = function(a) {
+    return function(a) {
+      return cljs.core.pr_sequential_writer.call(null, b, cljs.core.pr_writer, "", " ", "", c, a);
+    };
+  }(this);
+  return cljs.core.pr_sequential_writer.call(null, b, a, "#infierno.character.Character{", ", ", "}", c, cljs.core.concat.call(null, new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "sprite", "sprite", 172516848), this.sprite], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "team", "team", 
+  1355747699), this.team], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "speed", "speed", 1257663751), this.speed], null)], null), this.__extmap));
+};
+infierno.character.Character.prototype.cljs$core$IMeta$_meta$arity$1 = function(a) {
+  return this.__meta;
+};
+infierno.character.Character.prototype.cljs$core$ICloneable$_clone$arity$1 = function(a) {
+  return new infierno.character.Character(this.sprite, this.team, this.speed, this.__meta, this.__extmap, this.__hash);
+};
+infierno.character.Character.prototype.cljs$core$ICounted$_count$arity$1 = function(a) {
+  return 3 + cljs.core.count.call(null, this.__extmap);
+};
+infierno.character.Character.prototype.cljs$core$IHash$_hash$arity$1 = function(a) {
+  a = this.__hash;
+  return null != a ? a : this.__hash = a = cljs.core.hash_imap.call(null, this);
+};
+infierno.character.Character.prototype.cljs$core$IEquiv$_equiv$arity$2 = function(a, b) {
+  return cljs.core.truth_(cljs.core.truth_(b) ? this.constructor === b.constructor && cljs.core.equiv_map.call(null, this, b) : b) ? !0 : !1;
+};
+infierno.character.Character.prototype.infierno$protocol$Movable$ = !0;
+infierno.character.Character.prototype.infierno$protocol$Movable$move_frame$arity$3 = function(a, b, c) {
+  return infierno.protocol.move_frame.call(null, (new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(this), b, c);
+};
+infierno.character.Character.prototype.infierno$protocol$Movable$out_of_bounds_QMARK_$arity$3 = function(a, b, c) {
+  return infierno.protocol.out_of_bounds_QMARK_.call(null, (new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(this), b, c);
+};
+infierno.character.Character.prototype.infierno$protocol$Collidable$ = !0;
+infierno.character.Character.prototype.infierno$protocol$Collidable$collides_with$arity$2 = function(a, b) {
+  return infierno.protocol.collides_with.call(null, (new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(this), (new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(b));
+};
+infierno.character.Character.prototype.cljs$core$IMap$_dissoc$arity$2 = function(a, b) {
+  return cljs.core.contains_QMARK_.call(null, new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "speed", "speed", 1257663751), null, new cljs.core.Keyword(null, "sprite", "sprite", 172516848), null, new cljs.core.Keyword(null, "team", "team", 1355747699), null], null), null), b) ? cljs.core.dissoc.call(null, cljs.core.with_meta.call(null, cljs.core.into.call(null, cljs.core.PersistentArrayMap.EMPTY, this), this.__meta), b) : new infierno.character.Character(this.sprite, 
+  this.team, this.speed, this.__meta, cljs.core.not_empty.call(null, cljs.core.dissoc.call(null, this.__extmap, b)), null);
+};
+infierno.character.Character.prototype.cljs$core$IAssociative$_assoc$arity$3 = function(a, b, c) {
+  a = cljs.core.keyword_identical_QMARK_;
+  return cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "sprite", "sprite", 172516848), b)) ? new infierno.character.Character(c, this.team, this.speed, this.__meta, this.__extmap, null) : cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "team", "team", 1355747699), b)) ? new infierno.character.Character(this.sprite, c, this.speed, this.__meta, this.__extmap, null) : cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "speed", "speed", 1257663751), b)) ? new infierno.character.Character(this.sprite, 
+  this.team, c, this.__meta, this.__extmap, null) : new infierno.character.Character(this.sprite, this.team, this.speed, this.__meta, cljs.core.assoc.call(null, this.__extmap, b, c), null);
+};
+infierno.character.Character.prototype.cljs$core$ISeqable$_seq$arity$1 = function(a) {
+  return cljs.core.seq.call(null, cljs.core.concat.call(null, new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "sprite", "sprite", 172516848), this.sprite], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "team", "team", 1355747699), this.team], null), new cljs.core.PersistentVector(null, 
+  2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "speed", "speed", 1257663751), this.speed], null)], null), this.__extmap));
+};
+infierno.character.Character.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(a, b) {
+  return new infierno.character.Character(this.sprite, this.team, this.speed, b, this.__extmap, this.__hash);
+};
+infierno.character.Character.prototype.cljs$core$ICollection$_conj$arity$2 = function(a, b) {
+  return cljs.core.vector_QMARK_.call(null, b) ? cljs.core._assoc.call(null, this, cljs.core._nth.call(null, b, 0), cljs.core._nth.call(null, b, 1)) : cljs.core.reduce.call(null, cljs.core._conj, this, b);
+};
+infierno.character.Character.prototype.infierno$protocol$Controllable$ = !0;
+infierno.character.Character.prototype.infierno$protocol$Controllable$control_move$arity$4 = function(a, b, c, d) {
+  var e = (new cljs.core.Keyword(null, "speed", "speed", 1257663751)).cljs$core$IFn$_invoke$arity$1(this) * (new cljs.core.Keyword(null, "x1", "x1", -1863922247)).cljs$core$IFn$_invoke$arity$1(b), f = (new cljs.core.Keyword(null, "speed", "speed", 1257663751)).cljs$core$IFn$_invoke$arity$1(this) * (new cljs.core.Keyword(null, "y1", "y1", 589123466)).cljs$core$IFn$_invoke$arity$1(b), g = parseFloat((new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1((new cljs.core.Keyword(null, 
+  "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(this)).style.width), h = parseFloat((new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1((new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(this)).style.height), k = parseFloat((new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1((new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(this)).style.left), 
+  l = parseFloat((new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1((new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(this)).style.top);
+  a = 0 < e ? function() {
+    var a = c - g - k;
+    return e < a ? e : a;
+  }() : function() {
+    var a = -1 * k;
+    return e > a ? e : a;
+  }();
+  b = 0 < f ? function() {
+    var a = d - h - l;
+    return f < a ? f : a;
+  }() : function() {
+    var a = -1 * l;
+    return f > a ? f : a;
+  }();
+  return infierno.protocol.move_frame.call(null, this, a, b);
+};
+infierno.character.Character.prototype.infierno$protocol$Controllable$shoot$arity$1 = function(a) {
+  return this;
+};
+infierno.character.Character.prototype.infierno$protocol$Renderable$ = !0;
+infierno.character.Character.prototype.infierno$protocol$Renderable$render_BANG_$arity$1 = function(a) {
+  return cljs.core.assoc.call(null, this, new cljs.core.Keyword(null, "sprite", "sprite", 172516848), infierno.protocol.render_BANG_.call(null, this.sprite));
+};
+infierno.character.Character.prototype.infierno$protocol$Renderable$hide_BANG_$arity$1 = function(a) {
+  return cljs.core.assoc.call(null, this, new cljs.core.Keyword(null, "sprite", "sprite", 172516848), infierno.protocol.hide_BANG_.call(null, this.sprite));
+};
+infierno.character.Character.cljs$lang$type = !0;
+infierno.character.Character.cljs$lang$ctorPrSeq = function(a) {
+  return cljs.core._conj.call(null, cljs.core.List.EMPTY, "infierno.character/Character");
+};
+infierno.character.Character.cljs$lang$ctorPrWriter = function(a, b) {
+  return cljs.core._write.call(null, b, "infierno.character/Character");
+};
+infierno.character.__GT_Character = function(a, b, c) {
+  return new infierno.character.Character(a, b, c);
+};
+infierno.character.map__GT_Character = function(a) {
+  return new infierno.character.Character((new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(a), (new cljs.core.Keyword(null, "team", "team", 1355747699)).cljs$core$IFn$_invoke$arity$1(a), (new cljs.core.Keyword(null, "speed", "speed", 1257663751)).cljs$core$IFn$_invoke$arity$1(a), null, cljs.core.dissoc.call(null, a, new cljs.core.Keyword(null, "sprite", "sprite", 172516848), new cljs.core.Keyword(null, "team", "team", 1355747699), new cljs.core.Keyword(null, 
+  "speed", "speed", 1257663751)));
+};
+infierno.controller = {};
+infierno.controller.input_from_controller = function(a) {
+  a = a.axes;
+  return new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "x1", "x1", -1863922247), a[0], new cljs.core.Keyword(null, "y1", "y1", 589123466), a[1], new cljs.core.Keyword(null, "x2", "x2", -1362513475), a[2], new cljs.core.Keyword(null, "y2", "y2", -718691301), a[3]], null);
+};
+infierno.controller.input_from_keyboard = function() {
+  var a = KeyboardJS.activeKeys();
+  return new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "x1", "x1", -1863922247), cljs.core.truth_(cljs.core.some.call(null, new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, ["left", null], null), null), a)) ? -1 : cljs.core.truth_(cljs.core.some.call(null, new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, ["right", null], null), null), a)) ? 1 : 0, new cljs.core.Keyword(null, "y1", "y1", 589123466), cljs.core.truth_(cljs.core.some.call(null, 
+  new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, ["up", null], null), null), a)) ? -1 : cljs.core.truth_(cljs.core.some.call(null, new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, ["down", null], null), null), a)) ? 1 : 0, new cljs.core.Keyword(null, "shot", "shot", 1961298790), cljs.core.boolean$.call(null, cljs.core.some.call(null, new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, ["space", null], null), 
+  null), a))], null);
+};
+infierno.controller.get_input = function() {
+  var a = navigator.getGamepads()[0];
+  return cljs.core.truth_(a) ? infierno.controller.input_from_controller.call(null, a) : infierno.controller.input_from_keyboard.call(null);
+};
 var dommy = {utils:{}};
 dommy.utils.dissoc_in = function dissoc_in(b, c) {
   var d = cljs.core.nth.call(null, c, 0, null), e = cljs.core.nthnext.call(null, c, 1);
@@ -21261,459 +21787,14 @@ dommy.core.listen_once_BANG_ = function() {
   b.cljs$core$IFn$_invoke$arity$variadic = a;
   return b;
 }();
-var infierno = {protocol:{}};
-infierno.protocol.Renderable = function() {
-  return{};
-}();
-infierno.protocol.render = function(a) {
-  if (a ? a.infierno$protocol$Renderable$render$arity$1 : a) {
-    return a.infierno$protocol$Renderable$render$arity$1(a);
-  }
-  var b;
-  b = infierno.protocol.render[goog.typeOf(null == a ? null : a)];
-  if (!b && (b = infierno.protocol.render._, !b)) {
-    throw cljs.core.missing_protocol.call(null, "Renderable.render", a);
-  }
-  return b.call(null, a);
-};
-infierno.protocol.Movable = function() {
-  return{};
-}();
-infierno.protocol.move_frame = function() {
-  var a = null, b = function(a) {
-    if (a ? a.infierno$protocol$Movable$move_frame$arity$1 : a) {
-      return a.infierno$protocol$Movable$move_frame$arity$1(a);
-    }
-    var b;
-    b = infierno.protocol.move_frame[goog.typeOf(null == a ? null : a)];
-    if (!b && (b = infierno.protocol.move_frame._, !b)) {
-      throw cljs.core.missing_protocol.call(null, "Movable.move-frame", a);
-    }
-    return b.call(null, a);
-  }, c = function(a, b, c) {
-    if (a ? a.infierno$protocol$Movable$move_frame$arity$3 : a) {
-      return a.infierno$protocol$Movable$move_frame$arity$3(a, b, c);
-    }
-    var g;
-    g = infierno.protocol.move_frame[goog.typeOf(null == a ? null : a)];
-    if (!g && (g = infierno.protocol.move_frame._, !g)) {
-      throw cljs.core.missing_protocol.call(null, "Movable.move-frame", a);
-    }
-    return g.call(null, a, b, c);
-  }, a = function(a, e, f) {
-    switch(arguments.length) {
-      case 1:
-        return b.call(this, a);
-      case 3:
-        return c.call(this, a, e, f);
-    }
-    throw Error("Invalid arity: " + arguments.length);
-  };
-  a.cljs$core$IFn$_invoke$arity$1 = b;
-  a.cljs$core$IFn$_invoke$arity$3 = c;
-  return a;
-}();
-infierno.protocol.Collidable = function() {
-  return{};
-}();
-infierno.protocol.collides_with = function(a, b) {
-  if (a ? a.infierno$protocol$Collidable$collides_with$arity$2 : a) {
-    return a.infierno$protocol$Collidable$collides_with$arity$2(a, b);
-  }
-  var c;
-  c = infierno.protocol.collides_with[goog.typeOf(null == a ? null : a)];
-  if (!c && (c = infierno.protocol.collides_with._, !c)) {
-    throw cljs.core.missing_protocol.call(null, "Collidable.collides-with", a);
-  }
-  return c.call(null, a, b);
-};
-infierno.protocol.Shoots = function() {
-  return{};
-}();
-infierno.protocol.shoot = function(a) {
-  if (a ? a.infierno$protocol$Shoots$shoot$arity$1 : a) {
-    return a.infierno$protocol$Shoots$shoot$arity$1(a);
-  }
-  var b;
-  b = infierno.protocol.shoot[goog.typeOf(null == a ? null : a)];
-  if (!b && (b = infierno.protocol.shoot._, !b)) {
-    throw cljs.core.missing_protocol.call(null, "Shoots.shoot", a);
-  }
-  return b.call(null, a);
-};
-infierno.sprite = {};
-infierno.sprite.Spritesheet = function(a, b, c, d, e, f, g) {
-  this.url = a;
-  this.height = b;
-  this.width = c;
-  this.rows = d;
-  this.columns = e;
-  this.__meta = f;
-  this.__extmap = g;
-  this.cljs$lang$protocol_mask$partition0$ = 2229667594;
-  this.cljs$lang$protocol_mask$partition1$ = 8192;
-  5 < arguments.length ? (this.__meta = f, this.__extmap = g) : this.__extmap = this.__meta = null;
-};
-infierno.sprite.Spritesheet.prototype.cljs$core$ILookup$_lookup$arity$2 = function(a, b) {
-  return cljs.core._lookup.call(null, this, b, null);
-};
-infierno.sprite.Spritesheet.prototype.cljs$core$ILookup$_lookup$arity$3 = function(a, b, c) {
-  switch(b instanceof cljs.core.Keyword ? b.fqn : null) {
-    case "columns":
-      return this.columns;
-    case "rows":
-      return this.rows;
-    case "width":
-      return this.width;
-    case "height":
-      return this.height;
-    case "url":
-      return this.url;
-    default:
-      return cljs.core.get.call(null, this.__extmap, b, c);
-  }
-};
-infierno.sprite.Spritesheet.prototype.cljs$core$IPrintWithWriter$_pr_writer$arity$3 = function(a, b, c) {
-  a = function(a) {
-    return function(a) {
-      return cljs.core.pr_sequential_writer.call(null, b, cljs.core.pr_writer, "", " ", "", c, a);
-    };
-  }(this);
-  return cljs.core.pr_sequential_writer.call(null, b, a, "#infierno.sprite.Spritesheet{", ", ", "}", c, cljs.core.concat.call(null, new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "url", "url", 276297046), this.url], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "height", "height", 
-  1025178622), this.height], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "width", "width", -384071477), this.width], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "rows", "rows", 850049680), this.rows], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "columns", "columns", 1998437288), 
-  this.columns], null)], null), this.__extmap));
-};
-infierno.sprite.Spritesheet.prototype.cljs$core$IMeta$_meta$arity$1 = function(a) {
-  return this.__meta;
-};
-infierno.sprite.Spritesheet.prototype.cljs$core$ICloneable$_clone$arity$1 = function(a) {
-  return new infierno.sprite.Spritesheet(this.url, this.height, this.width, this.rows, this.columns, this.__meta, this.__extmap, this.__hash);
-};
-infierno.sprite.Spritesheet.prototype.cljs$core$ICounted$_count$arity$1 = function(a) {
-  return 5 + cljs.core.count.call(null, this.__extmap);
-};
-infierno.sprite.Spritesheet.prototype.cljs$core$IHash$_hash$arity$1 = function(a) {
-  a = this.__hash;
-  return null != a ? a : this.__hash = a = cljs.core.hash_imap.call(null, this);
-};
-infierno.sprite.Spritesheet.prototype.cljs$core$IEquiv$_equiv$arity$2 = function(a, b) {
-  return cljs.core.truth_(cljs.core.truth_(b) ? this.constructor === b.constructor && cljs.core.equiv_map.call(null, this, b) : b) ? !0 : !1;
-};
-infierno.sprite.Spritesheet.prototype.cljs$core$IMap$_dissoc$arity$2 = function(a, b) {
-  return cljs.core.contains_QMARK_.call(null, new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null, "columns", "columns", 1998437288), null, new cljs.core.Keyword(null, "width", "width", -384071477), null, new cljs.core.Keyword(null, "rows", "rows", 850049680), null, new cljs.core.Keyword(null, "url", "url", 276297046), null, new cljs.core.Keyword(null, "height", "height", 1025178622), null], null), null), b) ? cljs.core.dissoc.call(null, cljs.core.with_meta.call(null, 
-  cljs.core.into.call(null, cljs.core.PersistentArrayMap.EMPTY, this), this.__meta), b) : new infierno.sprite.Spritesheet(this.url, this.height, this.width, this.rows, this.columns, this.__meta, cljs.core.not_empty.call(null, cljs.core.dissoc.call(null, this.__extmap, b)), null);
-};
-infierno.sprite.Spritesheet.prototype.cljs$core$IAssociative$_assoc$arity$3 = function(a, b, c) {
-  a = cljs.core.keyword_identical_QMARK_;
-  return cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "url", "url", 276297046), b)) ? new infierno.sprite.Spritesheet(c, this.height, this.width, this.rows, this.columns, this.__meta, this.__extmap, null) : cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "height", "height", 1025178622), b)) ? new infierno.sprite.Spritesheet(this.url, c, this.width, this.rows, this.columns, this.__meta, this.__extmap, null) : cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "width", 
-  "width", -384071477), b)) ? new infierno.sprite.Spritesheet(this.url, this.height, c, this.rows, this.columns, this.__meta, this.__extmap, null) : cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "rows", "rows", 850049680), b)) ? new infierno.sprite.Spritesheet(this.url, this.height, this.width, c, this.columns, this.__meta, this.__extmap, null) : cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "columns", "columns", 1998437288), b)) ? new infierno.sprite.Spritesheet(this.url, 
-  this.height, this.width, this.rows, c, this.__meta, this.__extmap, null) : new infierno.sprite.Spritesheet(this.url, this.height, this.width, this.rows, this.columns, this.__meta, cljs.core.assoc.call(null, this.__extmap, b, c), null);
-};
-infierno.sprite.Spritesheet.prototype.cljs$core$ISeqable$_seq$arity$1 = function(a) {
-  return cljs.core.seq.call(null, cljs.core.concat.call(null, new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "url", "url", 276297046), this.url], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "height", "height", 1025178622), this.height], null), new cljs.core.PersistentVector(null, 
-  2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "width", "width", -384071477), this.width], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "rows", "rows", 850049680), this.rows], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "columns", "columns", 1998437288), this.columns], null)], null), this.__extmap));
-};
-infierno.sprite.Spritesheet.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(a, b) {
-  return new infierno.sprite.Spritesheet(this.url, this.height, this.width, this.rows, this.columns, b, this.__extmap, this.__hash);
-};
-infierno.sprite.Spritesheet.prototype.cljs$core$ICollection$_conj$arity$2 = function(a, b) {
-  return cljs.core.vector_QMARK_.call(null, b) ? cljs.core._assoc.call(null, this, cljs.core._nth.call(null, b, 0), cljs.core._nth.call(null, b, 1)) : cljs.core.reduce.call(null, cljs.core._conj, this, b);
-};
-infierno.sprite.Spritesheet.cljs$lang$type = !0;
-infierno.sprite.Spritesheet.cljs$lang$ctorPrSeq = function(a) {
-  return cljs.core._conj.call(null, cljs.core.List.EMPTY, "infierno.sprite/Spritesheet");
-};
-infierno.sprite.Spritesheet.cljs$lang$ctorPrWriter = function(a, b) {
-  return cljs.core._write.call(null, b, "infierno.sprite/Spritesheet");
-};
-infierno.sprite.__GT_Spritesheet = function(a, b, c, d, e) {
-  return new infierno.sprite.Spritesheet(a, b, c, d, e);
-};
-infierno.sprite.map__GT_Spritesheet = function(a) {
-  return new infierno.sprite.Spritesheet((new cljs.core.Keyword(null, "url", "url", 276297046)).cljs$core$IFn$_invoke$arity$1(a), (new cljs.core.Keyword(null, "height", "height", 1025178622)).cljs$core$IFn$_invoke$arity$1(a), (new cljs.core.Keyword(null, "width", "width", -384071477)).cljs$core$IFn$_invoke$arity$1(a), (new cljs.core.Keyword(null, "rows", "rows", 850049680)).cljs$core$IFn$_invoke$arity$1(a), (new cljs.core.Keyword(null, "columns", "columns", 1998437288)).cljs$core$IFn$_invoke$arity$1(a), 
-  null, cljs.core.dissoc.call(null, a, new cljs.core.Keyword(null, "url", "url", 276297046), new cljs.core.Keyword(null, "height", "height", 1025178622), new cljs.core.Keyword(null, "width", "width", -384071477), new cljs.core.Keyword(null, "rows", "rows", 850049680), new cljs.core.Keyword(null, "columns", "columns", 1998437288)));
-};
-var group__5595__auto___7980 = cljs.core.swap_BANG_.call(null, crate.core.group_id, cljs.core.inc);
-infierno.sprite.sprite_template = function(a) {
-  return function(b, c) {
-    var d = crate.core.html.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1057191632), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "id", "id", -1388402092), b, new cljs.core.Keyword(null, "class", "class", -2030961996), "infierno-sprite", new cljs.core.Keyword(null, "style", "style", -496642736), c], null)], null));
-    d.setAttribute("crateGroup", a);
-    return d;
-  };
-}(group__5595__auto___7980);
-infierno.sprite.sprite_template.prototype._crateGroup = group__5595__auto___7980;
-infierno.sprite.style_options = function(a) {
-  var b = function() {
-    return function d(a) {
-      return new cljs.core.LazySeq(null, function() {
-        for (;;) {
-          var b = cljs.core.seq.call(null, a);
-          if (b) {
-            if (cljs.core.chunked_seq_QMARK_.call(null, b)) {
-              var g = cljs.core.chunk_first.call(null, b), h = cljs.core.count.call(null, g), k = cljs.core.chunk_buffer.call(null, h);
-              a: {
-                for (var l = 0;;) {
-                  if (l < h) {
-                    var m = cljs.core._nth.call(null, g, l), n = cljs.core.nth.call(null, m, 0, null), m = cljs.core.nth.call(null, m, 1, null);
-                    cljs.core.chunk_append.call(null, k, clojure.string.join.call(null, "", new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.name.call(null, n), ": ", m, ";"], null)));
-                    l += 1;
-                  } else {
-                    g = !0;
-                    break a;
-                  }
-                }
-                g = void 0;
-              }
-              return g ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, k), d.call(null, cljs.core.chunk_rest.call(null, b))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, k), null);
-            }
-            g = cljs.core.first.call(null, b);
-            k = cljs.core.nth.call(null, g, 0, null);
-            g = cljs.core.nth.call(null, g, 1, null);
-            return cljs.core.cons.call(null, clojure.string.join.call(null, "", new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.name.call(null, k), ": ", g, ";"], null)), d.call(null, cljs.core.rest.call(null, b)));
-          }
-          return null;
-        }
-      }, null, null);
-    }.call(null, a);
-  }();
-  return clojure.string.join.call(null, b);
-};
-infierno.sprite.add_px = function(a, b) {
-  return parseFloat(a) + b + "px";
-};
-infierno.sprite.bounding = function(a) {
-  return new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "top", "top", -1856271961), parseFloat(a.style.top), new cljs.core.Keyword(null, "left", "left", -399115937), parseFloat(a.style.left), new cljs.core.Keyword(null, "width", "width", -384071477), parseFloat(a.style.width), new cljs.core.Keyword(null, "height", "height", 1025178622), parseFloat(a.style.height)], null);
-};
-infierno.sprite.Sprite = function(a, b, c, d, e, f) {
-  this.spritesheet = a;
-  this.row = b;
-  this.column = c;
-  this.render_options = d;
-  this.__meta = e;
-  this.__extmap = f;
-  this.cljs$lang$protocol_mask$partition0$ = 2229667594;
-  this.cljs$lang$protocol_mask$partition1$ = 8192;
-  4 < arguments.length ? (this.__meta = e, this.__extmap = f) : this.__extmap = this.__meta = null;
-};
-infierno.sprite.Sprite.prototype.cljs$core$ILookup$_lookup$arity$2 = function(a, b) {
-  return cljs.core._lookup.call(null, this, b, null);
-};
-infierno.sprite.Sprite.prototype.cljs$core$ILookup$_lookup$arity$3 = function(a, b, c) {
-  switch(b instanceof cljs.core.Keyword ? b.fqn : null) {
-    case "render-options":
-      return this.render_options;
-    case "column":
-      return this.column;
-    case "row":
-      return this.row;
-    case "spritesheet":
-      return this.spritesheet;
-    default:
-      return cljs.core.get.call(null, this.__extmap, b, c);
-  }
-};
-infierno.sprite.Sprite.prototype.cljs$core$IPrintWithWriter$_pr_writer$arity$3 = function(a, b, c) {
-  a = function(a) {
-    return function(a) {
-      return cljs.core.pr_sequential_writer.call(null, b, cljs.core.pr_writer, "", " ", "", c, a);
-    };
-  }(this);
-  return cljs.core.pr_sequential_writer.call(null, b, a, "#infierno.sprite.Sprite{", ", ", "}", c, cljs.core.concat.call(null, new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "spritesheet", "spritesheet", -542003038), this.spritesheet], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, 
-  "row", "row", -570139521), this.row], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "column", "column", 2078222095), this.column], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "render-options", "render-options", 686799147), this.render_options], null)], null), this.__extmap));
-};
-infierno.sprite.Sprite.prototype.cljs$core$IMeta$_meta$arity$1 = function(a) {
-  return this.__meta;
-};
-infierno.sprite.Sprite.prototype.cljs$core$ICloneable$_clone$arity$1 = function(a) {
-  return new infierno.sprite.Sprite(this.spritesheet, this.row, this.column, this.render_options, this.__meta, this.__extmap, this.__hash);
-};
-infierno.sprite.Sprite.prototype.cljs$core$ICounted$_count$arity$1 = function(a) {
-  return 4 + cljs.core.count.call(null, this.__extmap);
-};
-infierno.sprite.Sprite.prototype.cljs$core$IHash$_hash$arity$1 = function(a) {
-  a = this.__hash;
-  return null != a ? a : this.__hash = a = cljs.core.hash_imap.call(null, this);
-};
-infierno.sprite.Sprite.prototype.cljs$core$IEquiv$_equiv$arity$2 = function(a, b) {
-  return cljs.core.truth_(cljs.core.truth_(b) ? this.constructor === b.constructor && cljs.core.equiv_map.call(null, this, b) : b) ? !0 : !1;
-};
-infierno.sprite.Sprite.prototype.infierno$protocol$Movable$ = !0;
-infierno.sprite.Sprite.prototype.infierno$protocol$Movable$move_frame$arity$3 = function(a, b, c) {
-  a = (new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1(this).style.top;
-  var d = (new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1(this).style.left;
-  (new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1(this).style.setProperty("top", infierno.sprite.add_px.call(null, a, c));
-  return(new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1(this).style.setProperty("left", infierno.sprite.add_px.call(null, d, b));
-};
-infierno.sprite.Sprite.prototype.infierno$protocol$Collidable$ = !0;
-infierno.sprite.Sprite.prototype.infierno$protocol$Collidable$collides_with$arity$2 = function(a, b) {
-  var c = infierno.sprite.bounding.call(null, (new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1(this)), d = infierno.sprite.bounding.call(null, (new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1(b));
-  return!((new cljs.core.Keyword(null, "left", "left", -399115937)).cljs$core$IFn$_invoke$arity$1(d) > (new cljs.core.Keyword(null, "width", "width", -384071477)).cljs$core$IFn$_invoke$arity$1(c) + (new cljs.core.Keyword(null, "left", "left", -399115937)).cljs$core$IFn$_invoke$arity$1(c) || (new cljs.core.Keyword(null, "left", "left", -399115937)).cljs$core$IFn$_invoke$arity$1(d) + (new cljs.core.Keyword(null, "width", "width", -384071477)).cljs$core$IFn$_invoke$arity$1(d) < (new cljs.core.Keyword(null, 
-  "left", "left", -399115937)).cljs$core$IFn$_invoke$arity$1(c) || (new cljs.core.Keyword(null, "top", "top", -1856271961)).cljs$core$IFn$_invoke$arity$1(d) > (new cljs.core.Keyword(null, "top", "top", -1856271961)).cljs$core$IFn$_invoke$arity$1(c) + (new cljs.core.Keyword(null, "height", "height", 1025178622)).cljs$core$IFn$_invoke$arity$1(c) || (new cljs.core.Keyword(null, "top", "top", -1856271961)).cljs$core$IFn$_invoke$arity$1(d) + (new cljs.core.Keyword(null, "height", "height", 1025178622)).cljs$core$IFn$_invoke$arity$1(d) < 
-  (new cljs.core.Keyword(null, "top", "top", -1856271961)).cljs$core$IFn$_invoke$arity$1(c));
-};
-infierno.sprite.Sprite.prototype.cljs$core$IMap$_dissoc$arity$2 = function(a, b) {
-  return cljs.core.contains_QMARK_.call(null, new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "spritesheet", "spritesheet", -542003038), null, new cljs.core.Keyword(null, "render-options", "render-options", 686799147), null, new cljs.core.Keyword(null, "column", "column", 2078222095), null, new cljs.core.Keyword(null, "row", "row", -570139521), null], null), null), b) ? cljs.core.dissoc.call(null, cljs.core.with_meta.call(null, cljs.core.into.call(null, 
-  cljs.core.PersistentArrayMap.EMPTY, this), this.__meta), b) : new infierno.sprite.Sprite(this.spritesheet, this.row, this.column, this.render_options, this.__meta, cljs.core.not_empty.call(null, cljs.core.dissoc.call(null, this.__extmap, b)), null);
-};
-infierno.sprite.Sprite.prototype.cljs$core$IAssociative$_assoc$arity$3 = function(a, b, c) {
-  a = cljs.core.keyword_identical_QMARK_;
-  return cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "spritesheet", "spritesheet", -542003038), b)) ? new infierno.sprite.Sprite(c, this.row, this.column, this.render_options, this.__meta, this.__extmap, null) : cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "row", "row", -570139521), b)) ? new infierno.sprite.Sprite(this.spritesheet, c, this.column, this.render_options, this.__meta, this.__extmap, null) : cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "column", 
-  "column", 2078222095), b)) ? new infierno.sprite.Sprite(this.spritesheet, this.row, c, this.render_options, this.__meta, this.__extmap, null) : cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "render-options", "render-options", 686799147), b)) ? new infierno.sprite.Sprite(this.spritesheet, this.row, this.column, c, this.__meta, this.__extmap, null) : new infierno.sprite.Sprite(this.spritesheet, this.row, this.column, this.render_options, this.__meta, cljs.core.assoc.call(null, this.__extmap, 
-  b, c), null);
-};
-infierno.sprite.Sprite.prototype.cljs$core$ISeqable$_seq$arity$1 = function(a) {
-  return cljs.core.seq.call(null, cljs.core.concat.call(null, new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "spritesheet", "spritesheet", -542003038), this.spritesheet], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "row", "row", -570139521), this.row], null), new cljs.core.PersistentVector(null, 
-  2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "column", "column", 2078222095), this.column], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "render-options", "render-options", 686799147), this.render_options], null)], null), this.__extmap));
-};
-infierno.sprite.Sprite.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(a, b) {
-  return new infierno.sprite.Sprite(this.spritesheet, this.row, this.column, this.render_options, b, this.__extmap, this.__hash);
-};
-infierno.sprite.Sprite.prototype.cljs$core$ICollection$_conj$arity$2 = function(a, b) {
-  return cljs.core.vector_QMARK_.call(null, b) ? cljs.core._assoc.call(null, this, cljs.core._nth.call(null, b, 0), cljs.core._nth.call(null, b, 1)) : cljs.core.reduce.call(null, cljs.core._conj, this, b);
-};
-infierno.sprite.Sprite.prototype.infierno$protocol$Renderable$ = !0;
-infierno.sprite.Sprite.prototype.infierno$protocol$Renderable$render$arity$1 = function(a) {
-  a = cljs_uuid.core.make_random.call(null);
-  var b = infierno.sprite.sprite_template.call(null, a, infierno.sprite.style_options.call(null, (new cljs.core.Keyword(null, "render-options", "render-options", 686799147)).cljs$core$IFn$_invoke$arity$1(this)));
-  dommy.core.append_BANG_.call(null, document.body, b);
-  return cljs.core.assoc.call(null, this, new cljs.core.Keyword(null, "dom-id", "dom-id", -1588236703), a, new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914), b);
-};
-infierno.sprite.Sprite.cljs$lang$type = !0;
-infierno.sprite.Sprite.cljs$lang$ctorPrSeq = function(a) {
-  return cljs.core._conj.call(null, cljs.core.List.EMPTY, "infierno.sprite/Sprite");
-};
-infierno.sprite.Sprite.cljs$lang$ctorPrWriter = function(a, b) {
-  return cljs.core._write.call(null, b, "infierno.sprite/Sprite");
-};
-infierno.sprite.__GT_Sprite = function(a, b, c, d) {
-  return new infierno.sprite.Sprite(a, b, c, d);
-};
-infierno.sprite.map__GT_Sprite = function(a) {
-  return new infierno.sprite.Sprite((new cljs.core.Keyword(null, "spritesheet", "spritesheet", -542003038)).cljs$core$IFn$_invoke$arity$1(a), (new cljs.core.Keyword(null, "row", "row", -570139521)).cljs$core$IFn$_invoke$arity$1(a), (new cljs.core.Keyword(null, "column", "column", 2078222095)).cljs$core$IFn$_invoke$arity$1(a), (new cljs.core.Keyword(null, "render-options", "render-options", 686799147)).cljs$core$IFn$_invoke$arity$1(a), null, cljs.core.dissoc.call(null, a, new cljs.core.Keyword(null, 
-  "spritesheet", "spritesheet", -542003038), new cljs.core.Keyword(null, "row", "row", -570139521), new cljs.core.Keyword(null, "column", "column", 2078222095), new cljs.core.Keyword(null, "render-options", "render-options", 686799147)));
-};
-infierno.sprite.make_sprite_BANG_ = function(a, b, c, d, e) {
-  d = new cljs.core.PersistentArrayMap(null, 7, [new cljs.core.Keyword(null, "width", "width", -384071477), clojure.string.join.call(null, "", new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(new cljs.core.Keyword(null, "width", "width", -384071477)).cljs$core$IFn$_invoke$arity$1(a), "px"], null)), new cljs.core.Keyword(null, "height", "height", 1025178622), clojure.string.join.call(null, "", new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, 
-  [(new cljs.core.Keyword(null, "height", "height", 1025178622)).cljs$core$IFn$_invoke$arity$1(a), "px"], null)), new cljs.core.Keyword(null, "position", "position", -2011731912), "absolute", new cljs.core.Keyword(null, "top", "top", -1856271961), clojure.string.join.call(null, "", new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [e, "px"], null)), new cljs.core.Keyword(null, "left", "left", -399115937), clojure.string.join.call(null, new cljs.core.PersistentVector(null, 
-  2, 5, cljs.core.PersistentVector.EMPTY_NODE, [d, "px"], null)), new cljs.core.Keyword(null, "background-image", "background-image", -1142314704), clojure.string.join.call(null, "", new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, ["url(", (new cljs.core.Keyword(null, "url", "url", 276297046)).cljs$core$IFn$_invoke$arity$1(a), ")"], null)), new cljs.core.Keyword(null, "background-position", "background-position", 1112702746), clojure.string.join.call(null, "", new cljs.core.PersistentVector(null, 
-  6, 5, cljs.core.PersistentVector.EMPTY_NODE, ["-", (c - 1) * (new cljs.core.Keyword(null, "width", "width", -384071477)).cljs$core$IFn$_invoke$arity$1(a), "px ", "-", (b - 1) * (new cljs.core.Keyword(null, "height", "height", 1025178622)).cljs$core$IFn$_invoke$arity$1(a), "px"], null))], null);
-  return new infierno.sprite.Sprite(a, b, c, d);
-};
-infierno.character = {};
-infierno.character.Character = function(a, b, c, d) {
-  this.sprite = a;
-  this.team = b;
-  this.__meta = c;
-  this.__extmap = d;
-  this.cljs$lang$protocol_mask$partition0$ = 2229667594;
-  this.cljs$lang$protocol_mask$partition1$ = 8192;
-  2 < arguments.length ? (this.__meta = c, this.__extmap = d) : this.__extmap = this.__meta = null;
-};
-infierno.character.Character.prototype.cljs$core$ILookup$_lookup$arity$2 = function(a, b) {
-  return cljs.core._lookup.call(null, this, b, null);
-};
-infierno.character.Character.prototype.cljs$core$ILookup$_lookup$arity$3 = function(a, b, c) {
-  switch(b instanceof cljs.core.Keyword ? b.fqn : null) {
-    case "team":
-      return this.team;
-    case "sprite":
-      return this.sprite;
-    default:
-      return cljs.core.get.call(null, this.__extmap, b, c);
-  }
-};
-infierno.character.Character.prototype.cljs$core$IPrintWithWriter$_pr_writer$arity$3 = function(a, b, c) {
-  a = function(a) {
-    return function(a) {
-      return cljs.core.pr_sequential_writer.call(null, b, cljs.core.pr_writer, "", " ", "", c, a);
-    };
-  }(this);
-  return cljs.core.pr_sequential_writer.call(null, b, a, "#infierno.character.Character{", ", ", "}", c, cljs.core.concat.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "sprite", "sprite", 172516848), this.sprite], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "team", "team", 
-  1355747699), this.team], null)], null), this.__extmap));
-};
-infierno.character.Character.prototype.cljs$core$IMeta$_meta$arity$1 = function(a) {
-  return this.__meta;
-};
-infierno.character.Character.prototype.cljs$core$ICloneable$_clone$arity$1 = function(a) {
-  return new infierno.character.Character(this.sprite, this.team, this.__meta, this.__extmap, this.__hash);
-};
-infierno.character.Character.prototype.cljs$core$ICounted$_count$arity$1 = function(a) {
-  return 2 + cljs.core.count.call(null, this.__extmap);
-};
-infierno.character.Character.prototype.cljs$core$IHash$_hash$arity$1 = function(a) {
-  a = this.__hash;
-  return null != a ? a : this.__hash = a = cljs.core.hash_imap.call(null, this);
-};
-infierno.character.Character.prototype.cljs$core$IEquiv$_equiv$arity$2 = function(a, b) {
-  return cljs.core.truth_(cljs.core.truth_(b) ? this.constructor === b.constructor && cljs.core.equiv_map.call(null, this, b) : b) ? !0 : !1;
-};
-infierno.character.Character.prototype.infierno$protocol$Movable$ = !0;
-infierno.character.Character.prototype.infierno$protocol$Movable$move_frame$arity$3 = function(a, b, c) {
-  return infierno.protocol.move_frame.call(null, (new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(this), b, c);
-};
-infierno.character.Character.prototype.infierno$protocol$Collidable$ = !0;
-infierno.character.Character.prototype.infierno$protocol$Collidable$collides_with$arity$2 = function(a, b) {
-  return infierno.protocol.collides_with.call(null, (new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(this), (new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(b));
-};
-infierno.character.Character.prototype.cljs$core$IMap$_dissoc$arity$2 = function(a, b) {
-  return cljs.core.contains_QMARK_.call(null, new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "sprite", "sprite", 172516848), null, new cljs.core.Keyword(null, "team", "team", 1355747699), null], null), null), b) ? cljs.core.dissoc.call(null, cljs.core.with_meta.call(null, cljs.core.into.call(null, cljs.core.PersistentArrayMap.EMPTY, this), this.__meta), b) : new infierno.character.Character(this.sprite, this.team, this.__meta, cljs.core.not_empty.call(null, 
-  cljs.core.dissoc.call(null, this.__extmap, b)), null);
-};
-infierno.character.Character.prototype.infierno$protocol$Shoots$ = !0;
-infierno.character.Character.prototype.infierno$protocol$Shoots$shoot$arity$1 = function(a) {
-  return this;
-};
-infierno.character.Character.prototype.cljs$core$IAssociative$_assoc$arity$3 = function(a, b, c) {
-  a = cljs.core.keyword_identical_QMARK_;
-  return cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "sprite", "sprite", 172516848), b)) ? new infierno.character.Character(c, this.team, this.__meta, this.__extmap, null) : cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "team", "team", 1355747699), b)) ? new infierno.character.Character(this.sprite, c, this.__meta, this.__extmap, null) : new infierno.character.Character(this.sprite, this.team, this.__meta, cljs.core.assoc.call(null, this.__extmap, b, c), null);
-};
-infierno.character.Character.prototype.cljs$core$ISeqable$_seq$arity$1 = function(a) {
-  return cljs.core.seq.call(null, cljs.core.concat.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "sprite", "sprite", 172516848), this.sprite], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "team", "team", 1355747699), this.team], null)], null), this.__extmap));
-};
-infierno.character.Character.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(a, b) {
-  return new infierno.character.Character(this.sprite, this.team, b, this.__extmap, this.__hash);
-};
-infierno.character.Character.prototype.cljs$core$ICollection$_conj$arity$2 = function(a, b) {
-  return cljs.core.vector_QMARK_.call(null, b) ? cljs.core._assoc.call(null, this, cljs.core._nth.call(null, b, 0), cljs.core._nth.call(null, b, 1)) : cljs.core.reduce.call(null, cljs.core._conj, this, b);
-};
-infierno.character.Character.prototype.infierno$protocol$Renderable$ = !0;
-infierno.character.Character.prototype.infierno$protocol$Renderable$render$arity$1 = function(a) {
-  return cljs.core.assoc.call(null, this, new cljs.core.Keyword(null, "sprite", "sprite", 172516848), infierno.protocol.render.call(null, this.sprite));
-};
-infierno.character.Character.cljs$lang$type = !0;
-infierno.character.Character.cljs$lang$ctorPrSeq = function(a) {
-  return cljs.core._conj.call(null, cljs.core.List.EMPTY, "infierno.character/Character");
-};
-infierno.character.Character.cljs$lang$ctorPrWriter = function(a, b) {
-  return cljs.core._write.call(null, b, "infierno.character/Character");
-};
-infierno.character.__GT_Character = function(a, b) {
-  return new infierno.character.Character(a, b);
-};
-infierno.character.map__GT_Character = function(a) {
-  return new infierno.character.Character((new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(a), (new cljs.core.Keyword(null, "team", "team", 1355747699)).cljs$core$IFn$_invoke$arity$1(a), null, cljs.core.dissoc.call(null, a, new cljs.core.Keyword(null, "sprite", "sprite", 172516848), new cljs.core.Keyword(null, "team", "team", 1355747699)));
-};
-infierno.controller = {};
-infierno.controller.input_from_controller = function(a) {
-  a = a.axes;
-  return new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "x1", "x1", -1863922247), a[0], new cljs.core.Keyword(null, "y1", "y1", 589123466), a[1], new cljs.core.Keyword(null, "x2", "x2", -1362513475), a[2], new cljs.core.Keyword(null, "y2", "y2", -718691301), a[3]], null);
-};
-infierno.controller.input_from_keyboard = function() {
-  var a = KeyboardJS.activeKeys();
-  return new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "x1", "x1", -1863922247), cljs.core.truth_(cljs.core.some.call(null, new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, ["left", null], null), null), a)) ? -1 : cljs.core.truth_(cljs.core.some.call(null, new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, ["right", null], null), null), a)) ? 1 : 0, new cljs.core.Keyword(null, "y1", "y1", 589123466), cljs.core.truth_(cljs.core.some.call(null, 
-  new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, ["up", null], null), null), a)) ? -1 : cljs.core.truth_(cljs.core.some.call(null, new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, ["down", null], null), null), a)) ? 1 : 0, new cljs.core.Keyword(null, "shot", "shot", 1961298790), cljs.core.boolean$.call(null, cljs.core.some.call(null, new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, ["space", null], null), 
-  null), a))], null);
-};
-infierno.controller.get_input = function() {
-  var a = navigator.getGamepads()[0];
-  return cljs.core.truth_(a) ? infierno.controller.input_from_controller.call(null, a) : infierno.controller.input_from_keyboard.call(null);
-};
 infierno.bullet = {};
+infierno.bullet.friendly_bullets = cljs.core.atom.call(null, []);
+infierno.bullet.enemy_bullets = cljs.core.atom.call(null, []);
 infierno.bullet.Bullet = function(a, b, c, d, e, f) {
   this.sprite = a;
   this.hostile = b;
-  this.vector_x = c;
-  this.vector_y = d;
+  this.dx = c;
+  this.dy = d;
   this.__meta = e;
   this.__extmap = f;
   this.cljs$lang$protocol_mask$partition0$ = 2229667594;
@@ -21725,10 +21806,10 @@ infierno.bullet.Bullet.prototype.cljs$core$ILookup$_lookup$arity$2 = function(a,
 };
 infierno.bullet.Bullet.prototype.cljs$core$ILookup$_lookup$arity$3 = function(a, b, c) {
   switch(b instanceof cljs.core.Keyword ? b.fqn : null) {
-    case "vector-y":
-      return this.vector_y;
-    case "vector-x":
-      return this.vector_x;
+    case "dy":
+      return this.dy;
+    case "dx":
+      return this.dx;
     case "hostile":
       return this.hostile;
     case "sprite":
@@ -21744,13 +21825,13 @@ infierno.bullet.Bullet.prototype.cljs$core$IPrintWithWriter$_pr_writer$arity$3 =
     };
   }(this);
   return cljs.core.pr_sequential_writer.call(null, b, a, "#infierno.bullet.Bullet{", ", ", "}", c, cljs.core.concat.call(null, new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "sprite", "sprite", 172516848), this.sprite], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "hostile", "hostile", 
-  858836778), this.hostile], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "vector-x", "vector-x", 1121874937), this.vector_x], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "vector-y", "vector-y", -981514484), this.vector_y], null)], null), this.__extmap));
+  858836778), this.hostile], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "dx", "dx", -381796732), this.dx], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "dy", "dy", 1719547243), this.dy], null)], null), this.__extmap));
 };
 infierno.bullet.Bullet.prototype.cljs$core$IMeta$_meta$arity$1 = function(a) {
   return this.__meta;
 };
 infierno.bullet.Bullet.prototype.cljs$core$ICloneable$_clone$arity$1 = function(a) {
-  return new infierno.bullet.Bullet(this.sprite, this.hostile, this.vector_x, this.vector_y, this.__meta, this.__extmap, this.__hash);
+  return new infierno.bullet.Bullet(this.sprite, this.hostile, this.dx, this.dy, this.__meta, this.__extmap, this.__hash);
 };
 infierno.bullet.Bullet.prototype.cljs$core$ICounted$_count$arity$1 = function(a) {
   return 4 + cljs.core.count.call(null, this.__extmap);
@@ -21764,30 +21845,40 @@ infierno.bullet.Bullet.prototype.cljs$core$IEquiv$_equiv$arity$2 = function(a, b
 };
 infierno.bullet.Bullet.prototype.infierno$protocol$Movable$ = !0;
 infierno.bullet.Bullet.prototype.infierno$protocol$Movable$move_frame$arity$1 = function(a) {
-  return infierno.protocol.move_frame.call(null, (new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(this), (new cljs.core.Keyword(null, "vector-x", "vector-x", 1121874937)).cljs$core$IFn$_invoke$arity$1(this), (new cljs.core.Keyword(null, "vector-y", "vector-y", -981514484)).cljs$core$IFn$_invoke$arity$1(this));
+  return infierno.protocol.move_frame.call(null, (new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(this), (new cljs.core.Keyword(null, "dx", "dx", -381796732)).cljs$core$IFn$_invoke$arity$1(this), (new cljs.core.Keyword(null, "dy", "dy", 1719547243)).cljs$core$IFn$_invoke$arity$1(this));
+};
+infierno.bullet.Bullet.prototype.infierno$protocol$Movable$out_of_bounds_QMARK_$arity$3 = function(a, b, c) {
+  return infierno.protocol.out_of_bounds_QMARK_.call(null, (new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(this), b, c);
 };
 infierno.bullet.Bullet.prototype.infierno$protocol$Collidable$ = !0;
 infierno.bullet.Bullet.prototype.infierno$protocol$Collidable$collides_with$arity$2 = function(a, b) {
   return infierno.protocol.collides_with.call(null, (new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(this), (new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(b));
 };
 infierno.bullet.Bullet.prototype.cljs$core$IMap$_dissoc$arity$2 = function(a, b) {
-  return cljs.core.contains_QMARK_.call(null, new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "hostile", "hostile", 858836778), null, new cljs.core.Keyword(null, "vector-y", "vector-y", -981514484), null, new cljs.core.Keyword(null, "sprite", "sprite", 172516848), null, new cljs.core.Keyword(null, "vector-x", "vector-x", 1121874937), null], null), null), b) ? cljs.core.dissoc.call(null, cljs.core.with_meta.call(null, cljs.core.into.call(null, 
-  cljs.core.PersistentArrayMap.EMPTY, this), this.__meta), b) : new infierno.bullet.Bullet(this.sprite, this.hostile, this.vector_x, this.vector_y, this.__meta, cljs.core.not_empty.call(null, cljs.core.dissoc.call(null, this.__extmap, b)), null);
+  return cljs.core.contains_QMARK_.call(null, new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "dx", "dx", -381796732), null, new cljs.core.Keyword(null, "hostile", "hostile", 858836778), null, new cljs.core.Keyword(null, "dy", "dy", 1719547243), null, new cljs.core.Keyword(null, "sprite", "sprite", 172516848), null], null), null), b) ? cljs.core.dissoc.call(null, cljs.core.with_meta.call(null, cljs.core.into.call(null, cljs.core.PersistentArrayMap.EMPTY, 
+  this), this.__meta), b) : new infierno.bullet.Bullet(this.sprite, this.hostile, this.dx, this.dy, this.__meta, cljs.core.not_empty.call(null, cljs.core.dissoc.call(null, this.__extmap, b)), null);
 };
 infierno.bullet.Bullet.prototype.cljs$core$IAssociative$_assoc$arity$3 = function(a, b, c) {
   a = cljs.core.keyword_identical_QMARK_;
-  return cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "sprite", "sprite", 172516848), b)) ? new infierno.bullet.Bullet(c, this.hostile, this.vector_x, this.vector_y, this.__meta, this.__extmap, null) : cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "hostile", "hostile", 858836778), b)) ? new infierno.bullet.Bullet(this.sprite, c, this.vector_x, this.vector_y, this.__meta, this.__extmap, null) : cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "vector-x", "vector-x", 
-  1121874937), b)) ? new infierno.bullet.Bullet(this.sprite, this.hostile, c, this.vector_y, this.__meta, this.__extmap, null) : cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "vector-y", "vector-y", -981514484), b)) ? new infierno.bullet.Bullet(this.sprite, this.hostile, this.vector_x, c, this.__meta, this.__extmap, null) : new infierno.bullet.Bullet(this.sprite, this.hostile, this.vector_x, this.vector_y, this.__meta, cljs.core.assoc.call(null, this.__extmap, b, c), null);
+  return cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "sprite", "sprite", 172516848), b)) ? new infierno.bullet.Bullet(c, this.hostile, this.dx, this.dy, this.__meta, this.__extmap, null) : cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "hostile", "hostile", 858836778), b)) ? new infierno.bullet.Bullet(this.sprite, c, this.dx, this.dy, this.__meta, this.__extmap, null) : cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "dx", "dx", -381796732), b)) ? new infierno.bullet.Bullet(this.sprite, 
+  this.hostile, c, this.dy, this.__meta, this.__extmap, null) : cljs.core.truth_(a.call(null, new cljs.core.Keyword(null, "dy", "dy", 1719547243), b)) ? new infierno.bullet.Bullet(this.sprite, this.hostile, this.dx, c, this.__meta, this.__extmap, null) : new infierno.bullet.Bullet(this.sprite, this.hostile, this.dx, this.dy, this.__meta, cljs.core.assoc.call(null, this.__extmap, b, c), null);
 };
 infierno.bullet.Bullet.prototype.cljs$core$ISeqable$_seq$arity$1 = function(a) {
   return cljs.core.seq.call(null, cljs.core.concat.call(null, new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "sprite", "sprite", 172516848), this.sprite], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "hostile", "hostile", 858836778), this.hostile], null), new cljs.core.PersistentVector(null, 
-  2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "vector-x", "vector-x", 1121874937), this.vector_x], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "vector-y", "vector-y", -981514484), this.vector_y], null)], null), this.__extmap));
+  2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "dx", "dx", -381796732), this.dx], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "dy", "dy", 1719547243), this.dy], null)], null), this.__extmap));
 };
 infierno.bullet.Bullet.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(a, b) {
-  return new infierno.bullet.Bullet(this.sprite, this.hostile, this.vector_x, this.vector_y, b, this.__extmap, this.__hash);
+  return new infierno.bullet.Bullet(this.sprite, this.hostile, this.dx, this.dy, b, this.__extmap, this.__hash);
 };
 infierno.bullet.Bullet.prototype.cljs$core$ICollection$_conj$arity$2 = function(a, b) {
   return cljs.core.vector_QMARK_.call(null, b) ? cljs.core._assoc.call(null, this, cljs.core._nth.call(null, b, 0), cljs.core._nth.call(null, b, 1)) : cljs.core.reduce.call(null, cljs.core._conj, this, b);
+};
+infierno.bullet.Bullet.prototype.infierno$protocol$Renderable$ = !0;
+infierno.bullet.Bullet.prototype.infierno$protocol$Renderable$render_BANG_$arity$1 = function(a) {
+  return cljs.core.assoc.call(null, this, new cljs.core.Keyword(null, "sprite", "sprite", 172516848), infierno.protocol.render_BANG_.call(null, (new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(this)));
+};
+infierno.bullet.Bullet.prototype.infierno$protocol$Renderable$hide_BANG_$arity$1 = function(a) {
+  return cljs.core.assoc.call(null, this, new cljs.core.Keyword(null, "sprite", "sprite", 172516848), infierno.protocol.hide_BANG_.call(null, (new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(this)));
 };
 infierno.bullet.Bullet.cljs$lang$type = !0;
 infierno.bullet.Bullet.cljs$lang$ctorPrSeq = function(a) {
@@ -21800,54 +21891,75 @@ infierno.bullet.__GT_Bullet = function(a, b, c, d) {
   return new infierno.bullet.Bullet(a, b, c, d);
 };
 infierno.bullet.map__GT_Bullet = function(a) {
-  return new infierno.bullet.Bullet((new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(a), (new cljs.core.Keyword(null, "hostile", "hostile", 858836778)).cljs$core$IFn$_invoke$arity$1(a), (new cljs.core.Keyword(null, "vector-x", "vector-x", 1121874937)).cljs$core$IFn$_invoke$arity$1(a), (new cljs.core.Keyword(null, "vector-y", "vector-y", -981514484)).cljs$core$IFn$_invoke$arity$1(a), null, cljs.core.dissoc.call(null, a, new cljs.core.Keyword(null, "sprite", 
-  "sprite", 172516848), new cljs.core.Keyword(null, "hostile", "hostile", 858836778), new cljs.core.Keyword(null, "vector-x", "vector-x", 1121874937), new cljs.core.Keyword(null, "vector-y", "vector-y", -981514484)));
+  return new infierno.bullet.Bullet((new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(a), (new cljs.core.Keyword(null, "hostile", "hostile", 858836778)).cljs$core$IFn$_invoke$arity$1(a), (new cljs.core.Keyword(null, "dx", "dx", -381796732)).cljs$core$IFn$_invoke$arity$1(a), (new cljs.core.Keyword(null, "dy", "dy", 1719547243)).cljs$core$IFn$_invoke$arity$1(a), null, cljs.core.dissoc.call(null, a, new cljs.core.Keyword(null, "sprite", "sprite", 172516848), 
+  new cljs.core.Keyword(null, "hostile", "hostile", 858836778), new cljs.core.Keyword(null, "dx", "dx", -381796732), new cljs.core.Keyword(null, "dy", "dy", 1719547243)));
+};
+infierno.bullet.spawn_bullet_BANG_ = function(a) {
+  var b = cljs.core.seq_QMARK_.call(null, a) ? cljs.core.apply.call(null, cljs.core.hash_map, a) : a;
+  a = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "dy", "dy", 1719547243));
+  var c = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "dx", "dx", -381796732)), d = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "py", "py", 1397985916)), e = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "px", "px", 281329899)), f = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "sprite-y", "sprite-y", -191628319)), g = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "sprite-x", "sprite-x", 1115150190)), h = cljs.core.get.call(null, b, new cljs.core.Keyword(null, 
+  "spritesheet", "spritesheet", -542003038)), k = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "dom-parent", "dom-parent", -1899682061)), b = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "team", "team", 1355747699)), b = cljs.core._EQ_.call(null, new cljs.core.Keyword(null, "enemy", "enemy", -956472047), b) ? cljs.core.deref.call(null, infierno.bullet.enemy_bullets) : cljs.core.deref.call(null, infierno.bullet.friendly_bullets), d = infierno.protocol.render_BANG_.call(null, 
+  infierno.sprite.make_sprite_BANG_.call(null, k, h, g, f, e, d));
+  a = new infierno.bullet.Bullet(d, !0, c, a);
+  return b.push(a);
+};
+infierno.bullet.reap_bullets_BANG_ = function(a, b) {
+  for (var c = cljs.core.seq.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [infierno.bullet.friendly_bullets, infierno.bullet.enemy_bullets], null)), d = null, e = 0, f = 0;;) {
+    if (f < e) {
+      var g = cljs.core._nth.call(null, d, f), h = cljs.core.deref.call(null, g);
+      if (0 !== h.length) {
+        for (var k = [], l = 0;;) {
+          var m = h[l];
+          cljs.core.truth_(infierno.protocol.out_of_bounds_QMARK_.call(null, m, a, b)) ? infierno.protocol.hide_BANG_.call(null, m) : k.push(m);
+          if (l < h.length - 1) {
+            l += 1;
+          } else {
+            break;
+          }
+        }
+        cljs.core.reset_BANG_.call(null, g, k);
+      }
+      f += 1;
+    } else {
+      if (g = cljs.core.seq.call(null, c)) {
+        c = g;
+        if (cljs.core.chunked_seq_QMARK_.call(null, c)) {
+          d = cljs.core.chunk_first.call(null, c), c = cljs.core.chunk_rest.call(null, c), g = d, e = cljs.core.count.call(null, d), d = g;
+        } else {
+          g = cljs.core.first.call(null, c);
+          d = cljs.core.deref.call(null, g);
+          if (0 !== d.length) {
+            e = [];
+            for (f = 0;;) {
+              if (h = d[f], cljs.core.truth_(infierno.protocol.out_of_bounds_QMARK_.call(null, h, a, b)) ? infierno.protocol.hide_BANG_.call(null, h) : e.push(h), f < d.length - 1) {
+                f += 1;
+              } else {
+                break;
+              }
+            }
+            cljs.core.reset_BANG_.call(null, g, e);
+          }
+          c = cljs.core.next.call(null, c);
+          d = null;
+          e = 0;
+        }
+        f = 0;
+      } else {
+        return null;
+      }
+    }
+  }
 };
 infierno.main = {};
+infierno.main.dom_parent = document.getElementById("game");
+infierno.main.parent_max_x = infierno.main.dom_parent.offsetWidth;
+infierno.main.parent_max_y = infierno.main.dom_parent.offsetHeight;
 infierno.main.renders = cljs.core.atom.call(null, cljs.core.PersistentVector.EMPTY);
 infierno.main.sprites = new infierno.sprite.Spritesheet("img/test-spritesheet.png", 32, 32, 8, 8);
 infierno.main.rand_float = function(a) {
   return(.5 < Math.random() ? 1 : -1) * a * Math.random();
 };
-infierno.main.all_bullets = cljs.core.to_array.call(null, function() {
-  return function b(c) {
-    return new cljs.core.LazySeq(null, function() {
-      for (;;) {
-        var d = cljs.core.seq.call(null, c);
-        if (d) {
-          if (cljs.core.chunked_seq_QMARK_.call(null, d)) {
-            var e = cljs.core.chunk_first.call(null, d), f = cljs.core.count.call(null, e), g = cljs.core.chunk_buffer.call(null, f);
-            return function() {
-              for (var b = 0;;) {
-                if (b < f) {
-                  var c = cljs.core._nth.call(null, e, b);
-                  cljs.core.chunk_append.call(null, g, function() {
-                    var b = infierno.protocol.render.call(null, infierno.sprite.make_sprite_BANG_.call(null, infierno.main.sprites, 8, 5, 5 * c, 0));
-                    return new infierno.bullet.Bullet(b, !0, infierno.main.rand_float.call(null, 5), Math.abs(infierno.main.rand_float.call(null, 5)));
-                  }());
-                  b += 1;
-                } else {
-                  return!0;
-                }
-              }
-            }() ? cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, g), b.call(null, cljs.core.chunk_rest.call(null, d))) : cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, g), null);
-          }
-          var h = cljs.core.first.call(null, d);
-          return cljs.core.cons.call(null, function() {
-            var b = infierno.protocol.render.call(null, infierno.sprite.make_sprite_BANG_.call(null, infierno.main.sprites, 8, 5, 5 * h, 0));
-            return new infierno.bullet.Bullet(b, !0, infierno.main.rand_float.call(null, 5), Math.abs(infierno.main.rand_float.call(null, 5)));
-          }(), b.call(null, cljs.core.rest.call(null, d)));
-        }
-        return null;
-      }
-    }, null, null);
-  }.call(null, cljs.core.range.call(null, 500));
-}());
-infierno.main.player = new infierno.character.Character(infierno.protocol.render.call(null, infierno.sprite.make_sprite_BANG_.call(null, infierno.main.sprites, 4, 5, 300, 600)), new cljs.core.Keyword(null, "player", "player", -97687400));
-infierno.main.move = function(a, b) {
-  console.log(a);
-  return infierno.protocol.move_frame.call(null, a, 5 * (new cljs.core.Keyword(null, "x1", "x1", -1863922247)).cljs$core$IFn$_invoke$arity$1(b), 5 * (new cljs.core.Keyword(null, "y1", "y1", 589123466)).cljs$core$IFn$_invoke$arity$1(b));
-};
+infierno.main.player = new infierno.character.Character(infierno.protocol.render_BANG_.call(null, infierno.sprite.make_sprite_BANG_.call(null, infierno.main.dom_parent, infierno.main.sprites, 4, 5, 300, 600)), new cljs.core.Keyword(null, "player", "player", -97687400), 5);
 infierno.main.record_frame_completion = function() {
   return cljs.core.swap_BANG_.call(null, infierno.main.renders, cljs.core.conj, Date.now());
 };
@@ -21862,17 +21974,32 @@ infierno.main.log_frame_rate = function() {
   return console.log(cljs.core.count.call(null, cljs.core.deref.call(null, infierno.main.renders)));
 };
 infierno.main.animate = function animate() {
+  for (var b = cljs.core.seq.call(null, cljs.core.range.call(null, 2)), c = null, d = 0, e = 0;;) {
+    if (e < d) {
+      cljs.core._nth.call(null, c, e), infierno.bullet.spawn_bullet_BANG_.call(null, cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null, "sprite-y", "sprite-y", -191628319), new cljs.core.Keyword(null, "spritesheet", "spritesheet", -542003038), new cljs.core.Keyword(null, "dx", "dx", -381796732), new cljs.core.Keyword(null, "px", "px", 281329899), new cljs.core.Keyword(null, "dy", "dy", 1719547243), new cljs.core.Keyword(null, "sprite-x", "sprite-x", 1115150190), new cljs.core.Keyword(null, 
+      "team", "team", 1355747699), new cljs.core.Keyword(null, "dom-parent", "dom-parent", -1899682061), new cljs.core.Keyword(null, "py", "py", 1397985916)], [cljs.core.rand_int.call(null, 8) + 1, infierno.main.sprites, infierno.main.rand_float.call(null, 5), infierno.main.rand_float.call(null, 600), Math.abs(infierno.main.rand_float.call(null, 5)), cljs.core.rand_int.call(null, 8) + 1, new cljs.core.Keyword(null, "enemy", "enemy", -956472047), infierno.main.dom_parent, 0])), e += 1;
+    } else {
+      if (b = cljs.core.seq.call(null, b)) {
+        c = b, cljs.core.chunked_seq_QMARK_.call(null, c) ? (b = cljs.core.chunk_first.call(null, c), e = cljs.core.chunk_rest.call(null, c), c = b, d = cljs.core.count.call(null, b), b = e) : (cljs.core.first.call(null, c), infierno.bullet.spawn_bullet_BANG_.call(null, cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null, "sprite-y", "sprite-y", -191628319), new cljs.core.Keyword(null, "spritesheet", "spritesheet", -542003038), new cljs.core.Keyword(null, "dx", "dx", -381796732), new cljs.core.Keyword(null, 
+        "px", "px", 281329899), new cljs.core.Keyword(null, "dy", "dy", 1719547243), new cljs.core.Keyword(null, "sprite-x", "sprite-x", 1115150190), new cljs.core.Keyword(null, "team", "team", 1355747699), new cljs.core.Keyword(null, "dom-parent", "dom-parent", -1899682061), new cljs.core.Keyword(null, "py", "py", 1397985916)], [cljs.core.rand_int.call(null, 8) + 1, infierno.main.sprites, infierno.main.rand_float.call(null, 5), infierno.main.rand_float.call(null, 600), Math.abs(infierno.main.rand_float.call(null, 
+        5)), cljs.core.rand_int.call(null, 8) + 1, new cljs.core.Keyword(null, "enemy", "enemy", -956472047), infierno.main.dom_parent, 0])), b = cljs.core.next.call(null, c), c = null, d = 0), e = 0;
+      } else {
+        break;
+      }
+    }
+  }
   infierno.main.record_frame_completion.call(null);
-  var b = infierno.controller.get_input.call(null);
-  cljs.core.truth_(b) && infierno.main.move.call(null, infierno.main.player, b);
+  b = infierno.controller.get_input.call(null);
+  cljs.core.truth_(b) && infierno.protocol.control_move.call(null, infierno.main.player, b, infierno.main.parent_max_x, infierno.main.parent_max_y);
   for (b = 0;;) {
-    if (infierno.protocol.move_frame.call(null, infierno.main.all_bullets[b]), cljs.core.truth_(infierno.protocol.collides_with.call(null, infierno.main.all_bullets[b], infierno.main.player)) && (new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1((new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(infierno.main.player)).style.setProperty("background-color", "red"), b < infierno.main.all_bullets.length - 1) {
+    if (infierno.protocol.move_frame.call(null, cljs.core.deref.call(null, infierno.bullet.enemy_bullets)[b]), cljs.core.truth_(infierno.protocol.collides_with.call(null, cljs.core.deref.call(null, infierno.bullet.enemy_bullets)[b], infierno.main.player)) && (new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1((new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(infierno.main.player)).style.setProperty("background-color", 
+    "red"), b < cljs.core.deref.call(null, infierno.bullet.enemy_bullets).length - 1) {
       b += 1;
     } else {
       break;
     }
   }
-  .05 > Math.random() && infierno.main.log_frame_rate.call(null);
+  .05 > Math.random() && infierno.bullet.reap_bullets_BANG_.call(null, infierno.main.parent_max_x, infierno.main.parent_max_y);
   return window.requestAnimationFrame(animate);
 };
 infierno.main.animate.call(null);
