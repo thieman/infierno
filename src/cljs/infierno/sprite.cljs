@@ -22,18 +22,22 @@
     (+ new-val-int "px")))
 
 (defn bounding [dom-element]
-  {:top (js/parseFloat (-> dom-element .-style .-top))
-   :left (js/parseFloat (-> dom-element .-style .-left))
-   :width (js/parseFloat (-> dom-element .-style .-width))
-   :height (js/parseFloat (-> dom-element .-style .-height))})
+  {:top (-> dom-element .-style .-top js/parseFloat)
+   :left (-> dom-element .-style .-left js/parseFloat)
+   :width (-> dom-element .-style .-width js/parseFloat)
+   :height (-> dom-element .-style .-height js/parseFloat)})
 
-(defrecord Sprite [spritesheet row column render-options]
+(defrecord Sprite [dom-parent spritesheet row column render-options]
   Renderable
-  (render [self]
+  (render! [self]
     (let [dom-id (uuid/make-random)
           dom-element (sprite-template dom-id (style-options (:render-options self)))]
-      (dommy/append! (dommy/sel1 :body) dom-element)
+      (dommy/append! (:dom-parent self) dom-element)
       (assoc self :dom-id dom-id :dom-element dom-element)))
+
+  (hide! [self]
+    (.setProperty (.-style (:dom-element self)) "display" "none")
+    self)
 
   Movable
   (move-frame [self dx dy]
@@ -41,6 +45,16 @@
           current-left (-> (:dom-element self) .-style .-left)]
       (.setProperty (.-style (:dom-element self)) "top" (add-px current-top dy))
       (.setProperty (.-style (:dom-element self)) "left" (add-px current-left dx))))
+
+  (out-of-bounds? [self max-x max-y]
+    (let [current-top (-> (:dom-element self) .-style .-top js/parseFloat)
+          current-left (-> (:dom-element self) .-style .-left js/parseFloat)
+          width (-> (:dom-element self) .-style .-width js/parseFloat)
+          height (-> (:dom-element self) .-style .-height js/parseFloat)]
+      (or (< (+ current-top height) 0)
+          (> current-top max-y)
+          (< (+ current-left width) 0)
+          (> current-left max-x))))
 
   Collidable
   (collides-with [self sprite]
@@ -51,7 +65,7 @@
                (> (:top object-box) (+ (:top self-box) (:height self-box)))
                (< (+ (:top object-box) (:height object-box)) (:top self-box)))))))
 
-(defn make-sprite! [spritesheet row column start-x start-y]
+(defn make-sprite! [dom-parent spritesheet column row start-x start-y]
   (let [options {:width (string/join "" [(:width spritesheet) "px"])
                  :height (string/join "" [(:height spritesheet) "px"])
                  :position "absolute"
@@ -60,4 +74,4 @@
                  :background-image (string/join "" ["url(" (:url spritesheet) ")"])
                  :background-position (string/join "" ["-" (* (dec column) (:width spritesheet)) "px "
                                                        "-" (* (dec row) (:height spritesheet)) "px"])}]
-    (Sprite. spritesheet row column options)))
+    (Sprite. dom-parent spritesheet row column options)))

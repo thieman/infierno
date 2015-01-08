@@ -1,28 +1,29 @@
 (ns infierno.main
   (:require [infierno.sprite :refer [Spritesheet make-sprite! add-px]]
             [infierno.controller :as controller]
-            [infierno.bullet :refer [Bullet]]
+            [infierno.bullet :refer [spawn-bullet! enemy-bullets friendly-bullets reap-bullets!]]
             [infierno.character :refer [Character]]
-            [infierno.protocol :refer [render move-frame collides-with]]
+            [infierno.protocol :refer [render! move-frame collides-with]]
             [dommy.core :as dommy :include-macros true]))
+
+(def dom-parent (dommy/sel1 :#game))
+(def parent-max-x (-> dom-parent .-offsetWidth))
+(def parent-max-y (-> dom-parent .-offsetHeight))
 
 (def renders (atom []))
 
 (def sprites
   (Spritesheet. "img/test-spritesheet.png" 32 32 8 8))
 
+(defn rand-int [min max]
+  (+ min (.floor js/Math (* max (.random js/Math)))))
+
 (defn rand-float [max]
   (* (if (< 0.5 (.random js/Math)) 1 -1) (* max (.random js/Math))))
 
-(def all-bullets
-  (to-array (for [n (range 500)]
-              (let [sprite (render (make-sprite! sprites 8 5 (* 5 n) 0))]
-                (Bullet. sprite true (rand-float 5) (.abs js/Math (rand-float 5)))))))
-
-(def player (Character. (render (make-sprite! sprites 4 5 300 600)) :player))
+(def player (Character. (render! (make-sprite! dom-parent sprites 4 5 300 600)) :player))
 
 (defn move [player input]
-  (.log js/console player)
   (move-frame player (* 5 (:x1 input)) (* 5 (:y1 input))))
 
 (defn record-frame-completion []
@@ -34,17 +35,29 @@
     (.log js/console (count @renders))))
 
 (defn animate []
+  (doseq [n (range 2)]
+    (spawn-bullet! {:team :enemy
+                    :dom-parent dom-parent
+                    :spritesheet sprites
+                    :sprite-x (rand-int 1 8)
+                    :sprite-y (rand-int 1 8)
+                    :px (rand-float 600)
+                    :py 0
+                    :dx (rand-float 5)
+                    :dy (.abs js/Math (rand-float 5))}))
   (record-frame-completion)
   (when-let [input (controller/get-input)]
     (move player input))
   (loop [n 0]
-    (move-frame (aget all-bullets n))
-    (when (collides-with (aget all-bullets n) player)
+    (move-frame (aget @enemy-bullets n))
+    (when (collides-with (aget @enemy-bullets n) player)
       (.setProperty (.-style (-> player :sprite :dom-element)) "background-color" "red"))
-    (when (< n (dec (alength all-bullets)))
+    (when (< n (dec (alength @enemy-bullets)))
       (recur (inc n))))
+  ;; (when (> 0.05 (.random js/Math))
+  ;;   (log-frame-rate))
   (when (> 0.05 (.random js/Math))
-    (log-frame-rate))
+    (reap-bullets! parent-max-x parent-max-y))
   (.requestAnimationFrame js/window animate))
 
 (animate)
