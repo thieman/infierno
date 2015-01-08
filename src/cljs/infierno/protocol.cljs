@@ -11,5 +11,6 @@
 (defprotocol Collidable
   (collides-with [self sprite]))
 
-(defprotocol Shoots
+(defprotocol Controllable
+  (control-move [self input max-x max-y])
   (shoot [self]))

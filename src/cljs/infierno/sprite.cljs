@@ -2,8 +2,7 @@
   (:require [clojure.string :as string]
             [cljs-uuid.core :as uuid]
             [crate.core :as crate]
-            [infierno.protocol :refer [Renderable Movable Collidable]]
-            [dommy.core :as dommy :include-macros true])
+            [infierno.protocol :refer [Renderable Movable Collidable]])
   (:require-macros [crate.def-macros :refer [defpartial]]))
 
 (defrecord Spritesheet [url height width rows columns])
@@ -17,7 +16,7 @@
     (string/join pairs)))
 
 (defn add-px [current-value amount]
-  ;; All glory to the jankiness of JavaScript
+  ;; All glory to the jankiness of the JavaScript + operator
   (let [new-val-int (+ (js/parseFloat current-value) amount)]
     (+ new-val-int "px")))
 
@@ -32,7 +31,7 @@
   (render! [self]
     (let [dom-id (uuid/make-random)
           dom-element (sprite-template dom-id (style-options (:render-options self)))]
-      (dommy/append! (:dom-parent self) dom-element)
+      (.appendChild (:dom-parent self) dom-element)
       (assoc self :dom-id dom-id :dom-element dom-element)))
 
   (hide! [self]
