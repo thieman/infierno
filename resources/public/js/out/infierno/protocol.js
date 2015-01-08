@@ -2,8 +2,8 @@
 goog.provide('infierno.protocol');
 goog.require('cljs.core');
 
-infierno.protocol.Renderable = (function (){var obj11033 = {};
-return obj11033;
+infierno.protocol.Renderable = (function (){var obj11195 = {};
+return obj11195;
 })();
 
 infierno.protocol.render_BANG_ = (function render_BANG_(self){
@@ -59,8 +59,8 @@ throw cljs.core.missing_protocol.call(null,"Renderable.hide!",self);
 });
 
 
-infierno.protocol.Movable = (function (){var obj11035 = {};
-return obj11035;
+infierno.protocol.Movable = (function (){var obj11197 = {};
+return obj11197;
 })();
 
 infierno.protocol.move_frame = (function() {
@@ -157,8 +157,8 @@ throw cljs.core.missing_protocol.call(null,"Movable.out-of-bounds?",self);
 });
 
 
-infierno.protocol.Collidable = (function (){var obj11037 = {};
-return obj11037;
+infierno.protocol.Collidable = (function (){var obj11199 = {};
+return obj11199;
 })();
 
 infierno.protocol.collides_with = (function collides_with(self,sprite){
@@ -188,56 +188,82 @@ throw cljs.core.missing_protocol.call(null,"Collidable.collides-with",self);
 });
 
 
-infierno.protocol.Controllable = (function (){var obj11039 = {};
-return obj11039;
+infierno.protocol.Controllable = (function (){var obj11201 = {};
+return obj11201;
 })();
 
-infierno.protocol.control_move = (function control_move(self,input,max_x,max_y){
+infierno.protocol.control_move_BANG_ = (function control_move_BANG_(self,input,max_x,max_y){
 if((function (){var and__3596__auto__ = self;
 if(and__3596__auto__){
-return self.infierno$protocol$Controllable$control_move$arity$4;
+return self.infierno$protocol$Controllable$control_move_BANG_$arity$4;
 } else {
 return and__3596__auto__;
 }
 })()){
-return self.infierno$protocol$Controllable$control_move$arity$4(self,input,max_x,max_y);
+return self.infierno$protocol$Controllable$control_move_BANG_$arity$4(self,input,max_x,max_y);
 } else {
 var x__4247__auto__ = (((self == null))?null:self);
-return (function (){var or__3608__auto__ = (infierno.protocol.control_move[goog.typeOf(x__4247__auto__)]);
+return (function (){var or__3608__auto__ = (infierno.protocol.control_move_BANG_[goog.typeOf(x__4247__auto__)]);
 if(or__3608__auto__){
 return or__3608__auto__;
 } else {
-var or__3608__auto____$1 = (infierno.protocol.control_move["_"]);
+var or__3608__auto____$1 = (infierno.protocol.control_move_BANG_["_"]);
 if(or__3608__auto____$1){
 return or__3608__auto____$1;
 } else {
-throw cljs.core.missing_protocol.call(null,"Controllable.control-move",self);
+throw cljs.core.missing_protocol.call(null,"Controllable.control-move!",self);
 }
 }
 })().call(null,self,input,max_x,max_y);
 }
 });
 
-infierno.protocol.shoot = (function shoot(self){
+infierno.protocol.register_shot_fn_BANG_ = (function register_shot_fn_BANG_(self,shot_fn){
 if((function (){var and__3596__auto__ = self;
 if(and__3596__auto__){
-return self.infierno$protocol$Controllable$shoot$arity$1;
+return self.infierno$protocol$Controllable$register_shot_fn_BANG_$arity$2;
 } else {
 return and__3596__auto__;
 }
 })()){
-return self.infierno$protocol$Controllable$shoot$arity$1(self);
+return self.infierno$protocol$Controllable$register_shot_fn_BANG_$arity$2(self,shot_fn);
 } else {
 var x__4247__auto__ = (((self == null))?null:self);
-return (function (){var or__3608__auto__ = (infierno.protocol.shoot[goog.typeOf(x__4247__auto__)]);
+return (function (){var or__3608__auto__ = (infierno.protocol.register_shot_fn_BANG_[goog.typeOf(x__4247__auto__)]);
 if(or__3608__auto__){
 return or__3608__auto__;
 } else {
-var or__3608__auto____$1 = (infierno.protocol.shoot["_"]);
+var or__3608__auto____$1 = (infierno.protocol.register_shot_fn_BANG_["_"]);
 if(or__3608__auto____$1){
 return or__3608__auto____$1;
 } else {
-throw cljs.core.missing_protocol.call(null,"Controllable.shoot",self);
+throw cljs.core.missing_protocol.call(null,"Controllable.register-shot-fn!",self);
+}
+}
+})().call(null,self,shot_fn);
+}
+});
+
+infierno.protocol.shoot_BANG_ = (function shoot_BANG_(self){
+if((function (){var and__3596__auto__ = self;
+if(and__3596__auto__){
+return self.infierno$protocol$Controllable$shoot_BANG_$arity$1;
+} else {
+return and__3596__auto__;
+}
+})()){
+return self.infierno$protocol$Controllable$shoot_BANG_$arity$1(self);
+} else {
+var x__4247__auto__ = (((self == null))?null:self);
+return (function (){var or__3608__auto__ = (infierno.protocol.shoot_BANG_[goog.typeOf(x__4247__auto__)]);
+if(or__3608__auto__){
+return or__3608__auto__;
+} else {
+var or__3608__auto____$1 = (infierno.protocol.shoot_BANG_["_"]);
+if(or__3608__auto____$1){
+return or__3608__auto____$1;
+} else {
+throw cljs.core.missing_protocol.call(null,"Controllable.shoot!",self);
 }
 }
 })().call(null,self);

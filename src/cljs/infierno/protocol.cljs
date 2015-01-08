@@ -12,5 +12,6 @@
   (collides-with [self sprite]))
 
 (defprotocol Controllable
-  (control-move [self input max-x max-y])
-  (shoot [self]))
+  (control-move! [self input max-x max-y])
+  (register-shot-fn! [self shot-fn])
+  (shoot! [self]))

@@ -3,6 +3,7 @@ goog.provide('infierno.character');
 goog.require('cljs.core');
 goog.require('infierno.protocol');
 goog.require('infierno.protocol');
+infierno.character.shot_fns = cljs.core.atom.call(null,cljs.core.PersistentArrayMap.EMPTY);
 
 /**
 * @constructor
@@ -36,11 +37,11 @@ var this__4206__auto____$1 = this;
 return cljs.core._lookup.call(null,this__4206__auto____$1,k__4207__auto__,null);
 });
 
-infierno.character.Character.prototype.cljs$core$ILookup$_lookup$arity$3 = (function (this__4208__auto__,k11113,else__4209__auto__){
+infierno.character.Character.prototype.cljs$core$ILookup$_lookup$arity$3 = (function (this__4208__auto__,k12014,else__4209__auto__){
 var self__ = this;
 var this__4208__auto____$1 = this;
-var G__11115 = (((k11113 instanceof cljs.core.Keyword))?k11113.fqn:null);
-switch (G__11115) {
+var G__12016 = (((k12014 instanceof cljs.core.Keyword))?k12014.fqn:null);
+switch (G__12016) {
 case "speed":
 return self__.speed;
 
@@ -54,7 +55,7 @@ return self__.sprite;
 
 break;
 default:
-return cljs.core.get.call(null,self__.__extmap,k11113,else__4209__auto__);
+return cljs.core.get.call(null,self__.__extmap,k12014,else__4209__auto__);
 
 }
 });
@@ -150,21 +151,21 @@ return (new infierno.character.Character(self__.sprite,self__.team,self__.speed,
 }
 });
 
-infierno.character.Character.prototype.cljs$core$IAssociative$_assoc$arity$3 = (function (this__4213__auto__,k__4214__auto__,G__11112){
+infierno.character.Character.prototype.cljs$core$IAssociative$_assoc$arity$3 = (function (this__4213__auto__,k__4214__auto__,G__12013){
 var self__ = this;
 var this__4213__auto____$1 = this;
-var pred__11116 = cljs.core.keyword_identical_QMARK_;
-var expr__11117 = k__4214__auto__;
-if(cljs.core.truth_(pred__11116.call(null,new cljs.core.Keyword(null,"sprite","sprite",172516848),expr__11117))){
-return (new infierno.character.Character(G__11112,self__.team,self__.speed,self__.__meta,self__.__extmap,null));
+var pred__12017 = cljs.core.keyword_identical_QMARK_;
+var expr__12018 = k__4214__auto__;
+if(cljs.core.truth_(pred__12017.call(null,new cljs.core.Keyword(null,"sprite","sprite",172516848),expr__12018))){
+return (new infierno.character.Character(G__12013,self__.team,self__.speed,self__.__meta,self__.__extmap,null));
 } else {
-if(cljs.core.truth_(pred__11116.call(null,new cljs.core.Keyword(null,"team","team",1355747699),expr__11117))){
-return (new infierno.character.Character(self__.sprite,G__11112,self__.speed,self__.__meta,self__.__extmap,null));
+if(cljs.core.truth_(pred__12017.call(null,new cljs.core.Keyword(null,"team","team",1355747699),expr__12018))){
+return (new infierno.character.Character(self__.sprite,G__12013,self__.speed,self__.__meta,self__.__extmap,null));
 } else {
-if(cljs.core.truth_(pred__11116.call(null,new cljs.core.Keyword(null,"speed","speed",1257663751),expr__11117))){
-return (new infierno.character.Character(self__.sprite,self__.team,G__11112,self__.__meta,self__.__extmap,null));
+if(cljs.core.truth_(pred__12017.call(null,new cljs.core.Keyword(null,"speed","speed",1257663751),expr__12018))){
+return (new infierno.character.Character(self__.sprite,self__.team,G__12013,self__.__meta,self__.__extmap,null));
 } else {
-return (new infierno.character.Character(self__.sprite,self__.team,self__.speed,self__.__meta,cljs.core.assoc.call(null,self__.__extmap,k__4214__auto__,G__11112),null));
+return (new infierno.character.Character(self__.sprite,self__.team,self__.speed,self__.__meta,cljs.core.assoc.call(null,self__.__extmap,k__4214__auto__,G__12013),null));
 }
 }
 }
@@ -176,10 +177,10 @@ var this__4218__auto____$1 = this;
 return cljs.core.seq.call(null,cljs.core.concat.call(null,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [(new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[new cljs.core.Keyword(null,"sprite","sprite",172516848),self__.sprite],null)),(new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[new cljs.core.Keyword(null,"team","team",1355747699),self__.team],null)),(new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[new cljs.core.Keyword(null,"speed","speed",1257663751),self__.speed],null))], null),self__.__extmap));
 });
 
-infierno.character.Character.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (this__4205__auto__,G__11112){
+infierno.character.Character.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (this__4205__auto__,G__12013){
 var self__ = this;
 var this__4205__auto____$1 = this;
-return (new infierno.character.Character(self__.sprite,self__.team,self__.speed,G__11112,self__.__extmap,self__.__hash));
+return (new infierno.character.Character(self__.sprite,self__.team,self__.speed,G__12013,self__.__extmap,self__.__hash));
 });
 
 infierno.character.Character.prototype.cljs$core$ICollection$_conj$arity$2 = (function (this__4211__auto__,entry__4212__auto__){
@@ -194,7 +195,7 @@ return cljs.core.reduce.call(null,cljs.core._conj,this__4211__auto____$1,entry__
 
 infierno.character.Character.prototype.infierno$protocol$Controllable$ = true;
 
-infierno.character.Character.prototype.infierno$protocol$Controllable$control_move$arity$4 = (function (self,input,max_x,max_y){
+infierno.character.Character.prototype.infierno$protocol$Controllable$control_move_BANG_$arity$4 = (function (self,input,max_x,max_y){
 var self__ = this;
 var self__$1 = this;
 var dx = (new cljs.core.Keyword(null,"speed","speed",1257663751).cljs$core$IFn$_invoke$arity$1(self__$1) * new cljs.core.Keyword(null,"x1","x1",-1863922247).cljs$core$IFn$_invoke$arity$1(input));
@@ -220,10 +221,21 @@ return ((x__3920__auto__ > y__3921__auto__) ? x__3920__auto__ : y__3921__auto__)
 return infierno.protocol.move_frame.call(null,self__$1,actual_dx,actual_dy);
 });
 
-infierno.character.Character.prototype.infierno$protocol$Controllable$shoot$arity$1 = (function (self){
+infierno.character.Character.prototype.infierno$protocol$Controllable$register_shot_fn_BANG_$arity$2 = (function (self,shot_fn){
 var self__ = this;
 var self__$1 = this;
-return self__$1;
+return cljs.core.swap_BANG_.call(null,infierno.character.shot_fns,cljs.core.assoc,self__$1,shot_fn);
+});
+
+infierno.character.Character.prototype.infierno$protocol$Controllable$shoot_BANG_$arity$1 = (function (self){
+var self__ = this;
+var self__$1 = this;
+var shot_fn = cljs.core.deref.call(null,infierno.character.shot_fns).call(null,self__$1);
+var top = parseFloat(new cljs.core.Keyword(null,"dom-element","dom-element",-1359955914).cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"sprite","sprite",172516848).cljs$core$IFn$_invoke$arity$1(self__$1)).style.top);
+var left = parseFloat(new cljs.core.Keyword(null,"dom-element","dom-element",-1359955914).cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"sprite","sprite",172516848).cljs$core$IFn$_invoke$arity$1(self__$1)).style.left);
+var width = parseFloat(new cljs.core.Keyword(null,"dom-element","dom-element",-1359955914).cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"sprite","sprite",172516848).cljs$core$IFn$_invoke$arity$1(self__$1)).style.width);
+var center_x = (left + (width / (2)));
+return shot_fn.call(null,self__$1,top,center_x);
 });
 
 infierno.character.Character.prototype.infierno$protocol$Renderable$ = true;
@@ -254,7 +266,7 @@ infierno.character.__GT_Character = (function __GT_Character(sprite,team,speed){
 return (new infierno.character.Character(sprite,team,speed));
 });
 
-infierno.character.map__GT_Character = (function map__GT_Character(G__11114){
-return (new infierno.character.Character(new cljs.core.Keyword(null,"sprite","sprite",172516848).cljs$core$IFn$_invoke$arity$1(G__11114),new cljs.core.Keyword(null,"team","team",1355747699).cljs$core$IFn$_invoke$arity$1(G__11114),new cljs.core.Keyword(null,"speed","speed",1257663751).cljs$core$IFn$_invoke$arity$1(G__11114),null,cljs.core.dissoc.call(null,G__11114,new cljs.core.Keyword(null,"sprite","sprite",172516848),new cljs.core.Keyword(null,"team","team",1355747699),new cljs.core.Keyword(null,"speed","speed",1257663751))));
+infierno.character.map__GT_Character = (function map__GT_Character(G__12015){
+return (new infierno.character.Character(new cljs.core.Keyword(null,"sprite","sprite",172516848).cljs$core$IFn$_invoke$arity$1(G__12015),new cljs.core.Keyword(null,"team","team",1355747699).cljs$core$IFn$_invoke$arity$1(G__12015),new cljs.core.Keyword(null,"speed","speed",1257663751).cljs$core$IFn$_invoke$arity$1(G__12015),null,cljs.core.dissoc.call(null,G__12015,new cljs.core.Keyword(null,"sprite","sprite",172516848),new cljs.core.Keyword(null,"team","team",1355747699),new cljs.core.Keyword(null,"speed","speed",1257663751))));
 });
 

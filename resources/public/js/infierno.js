@@ -20375,25 +20375,36 @@ infierno.protocol.collides_with = function(a, b) {
 infierno.protocol.Controllable = function() {
   return{};
 }();
-infierno.protocol.control_move = function(a, b, c, d) {
-  if (a ? a.infierno$protocol$Controllable$control_move$arity$4 : a) {
-    return a.infierno$protocol$Controllable$control_move$arity$4(a, b, c, d);
+infierno.protocol.control_move_BANG_ = function(a, b, c, d) {
+  if (a ? a.infierno$protocol$Controllable$control_move_BANG_$arity$4 : a) {
+    return a.infierno$protocol$Controllable$control_move_BANG_$arity$4(a, b, c, d);
   }
   var e;
-  e = infierno.protocol.control_move[goog.typeOf(null == a ? null : a)];
-  if (!e && (e = infierno.protocol.control_move._, !e)) {
-    throw cljs.core.missing_protocol.call(null, "Controllable.control-move", a);
+  e = infierno.protocol.control_move_BANG_[goog.typeOf(null == a ? null : a)];
+  if (!e && (e = infierno.protocol.control_move_BANG_._, !e)) {
+    throw cljs.core.missing_protocol.call(null, "Controllable.control-move!", a);
   }
   return e.call(null, a, b, c, d);
 };
-infierno.protocol.shoot = function(a) {
-  if (a ? a.infierno$protocol$Controllable$shoot$arity$1 : a) {
-    return a.infierno$protocol$Controllable$shoot$arity$1(a);
+infierno.protocol.register_shot_fn_BANG_ = function(a, b) {
+  if (a ? a.infierno$protocol$Controllable$register_shot_fn_BANG_$arity$2 : a) {
+    return a.infierno$protocol$Controllable$register_shot_fn_BANG_$arity$2(a, b);
+  }
+  var c;
+  c = infierno.protocol.register_shot_fn_BANG_[goog.typeOf(null == a ? null : a)];
+  if (!c && (c = infierno.protocol.register_shot_fn_BANG_._, !c)) {
+    throw cljs.core.missing_protocol.call(null, "Controllable.register-shot-fn!", a);
+  }
+  return c.call(null, a, b);
+};
+infierno.protocol.shoot_BANG_ = function(a) {
+  if (a ? a.infierno$protocol$Controllable$shoot_BANG_$arity$1 : a) {
+    return a.infierno$protocol$Controllable$shoot_BANG_$arity$1(a);
   }
   var b;
-  b = infierno.protocol.shoot[goog.typeOf(null == a ? null : a)];
-  if (!b && (b = infierno.protocol.shoot._, !b)) {
-    throw cljs.core.missing_protocol.call(null, "Controllable.shoot", a);
+  b = infierno.protocol.shoot_BANG_[goog.typeOf(null == a ? null : a)];
+  if (!b && (b = infierno.protocol.shoot_BANG_._, !b)) {
+    throw cljs.core.missing_protocol.call(null, "Controllable.shoot!", a);
   }
   return b.call(null, a);
 };
@@ -20670,6 +20681,7 @@ infierno.sprite.make_sprite_BANG_ = function(a, b, c, d, e, f) {
   return new infierno.sprite.Sprite(a, b, d, c, e);
 };
 infierno.character = {};
+infierno.character.shot_fns = cljs.core.atom.call(null, cljs.core.PersistentArrayMap.EMPTY);
 infierno.character.Character = function(a, b, c, d, e) {
   this.sprite = a;
   this.team = b;
@@ -20751,7 +20763,7 @@ infierno.character.Character.prototype.cljs$core$ICollection$_conj$arity$2 = fun
   return cljs.core.vector_QMARK_.call(null, b) ? cljs.core._assoc.call(null, this, cljs.core._nth.call(null, b, 0), cljs.core._nth.call(null, b, 1)) : cljs.core.reduce.call(null, cljs.core._conj, this, b);
 };
 infierno.character.Character.prototype.infierno$protocol$Controllable$ = !0;
-infierno.character.Character.prototype.infierno$protocol$Controllable$control_move$arity$4 = function(a, b, c, d) {
+infierno.character.Character.prototype.infierno$protocol$Controllable$control_move_BANG_$arity$4 = function(a, b, c, d) {
   var e = (new cljs.core.Keyword(null, "speed", "speed", 1257663751)).cljs$core$IFn$_invoke$arity$1(this) * (new cljs.core.Keyword(null, "x1", "x1", -1863922247)).cljs$core$IFn$_invoke$arity$1(b), f = (new cljs.core.Keyword(null, "speed", "speed", 1257663751)).cljs$core$IFn$_invoke$arity$1(this) * (new cljs.core.Keyword(null, "y1", "y1", 589123466)).cljs$core$IFn$_invoke$arity$1(b), g = parseFloat((new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1((new cljs.core.Keyword(null, 
   "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(this)).style.width), h = parseFloat((new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1((new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(this)).style.height), k = parseFloat((new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1((new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(this)).style.left), 
   l = parseFloat((new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1((new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(this)).style.top);
@@ -20771,8 +20783,14 @@ infierno.character.Character.prototype.infierno$protocol$Controllable$control_mo
   }();
   return infierno.protocol.move_frame.call(null, this, a, b);
 };
-infierno.character.Character.prototype.infierno$protocol$Controllable$shoot$arity$1 = function(a) {
-  return this;
+infierno.character.Character.prototype.infierno$protocol$Controllable$register_shot_fn_BANG_$arity$2 = function(a, b) {
+  return cljs.core.swap_BANG_.call(null, infierno.character.shot_fns, cljs.core.assoc, this, b);
+};
+infierno.character.Character.prototype.infierno$protocol$Controllable$shoot_BANG_$arity$1 = function(a) {
+  a = cljs.core.deref.call(null, infierno.character.shot_fns).call(null, this);
+  var b = parseFloat((new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1((new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(this)).style.top), c = parseFloat((new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1((new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(this)).style.left), d = parseFloat((new cljs.core.Keyword(null, 
+  "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1((new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(this)).style.width);
+  return a.call(null, this, b, c + d / 2);
 };
 infierno.character.Character.prototype.infierno$protocol$Renderable$ = !0;
 infierno.character.Character.prototype.infierno$protocol$Renderable$render_BANG_$arity$1 = function(a) {
@@ -21959,7 +21977,27 @@ infierno.main.sprites = new infierno.sprite.Spritesheet("img/test-spritesheet.pn
 infierno.main.rand_float = function(a) {
   return(.5 < Math.random() ? 1 : -1) * a * Math.random();
 };
+infierno.main.player_fire_shot_BANG_ = function(a, b, c) {
+  a = cljs.core.seq.call(null, new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [-3, 0, 3], null));
+  for (var d = null, e = 0, f = 0;;) {
+    if (f < e) {
+      var g = cljs.core._nth.call(null, d, f);
+      infierno.bullet.spawn_bullet_BANG_.call(null, cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null, "sprite-y", "sprite-y", -191628319), new cljs.core.Keyword(null, "spritesheet", "spritesheet", -542003038), new cljs.core.Keyword(null, "dx", "dx", -381796732), new cljs.core.Keyword(null, "px", "px", 281329899), new cljs.core.Keyword(null, "dy", "dy", 1719547243), new cljs.core.Keyword(null, "sprite-x", "sprite-x", 1115150190), new cljs.core.Keyword(null, "team", "team", 1355747699), 
+      new cljs.core.Keyword(null, "dom-parent", "dom-parent", -1899682061), new cljs.core.Keyword(null, "py", "py", 1397985916)], [7, infierno.main.sprites, g, c - 16, -15, 5, new cljs.core.Keyword(null, "player", "player", -97687400), infierno.main.dom_parent, b - 16]));
+      f += 1;
+    } else {
+      if (a = cljs.core.seq.call(null, a)) {
+        d = a, cljs.core.chunked_seq_QMARK_.call(null, d) ? (a = cljs.core.chunk_first.call(null, d), e = cljs.core.chunk_rest.call(null, d), d = a, g = cljs.core.count.call(null, a), a = e, e = g) : (g = cljs.core.first.call(null, d), infierno.bullet.spawn_bullet_BANG_.call(null, cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null, "sprite-y", "sprite-y", -191628319), new cljs.core.Keyword(null, "spritesheet", "spritesheet", -542003038), new cljs.core.Keyword(null, "dx", "dx", -381796732), 
+        new cljs.core.Keyword(null, "px", "px", 281329899), new cljs.core.Keyword(null, "dy", "dy", 1719547243), new cljs.core.Keyword(null, "sprite-x", "sprite-x", 1115150190), new cljs.core.Keyword(null, "team", "team", 1355747699), new cljs.core.Keyword(null, "dom-parent", "dom-parent", -1899682061), new cljs.core.Keyword(null, "py", "py", 1397985916)], [7, infierno.main.sprites, g, c - 16, -15, 5, new cljs.core.Keyword(null, "player", "player", -97687400), infierno.main.dom_parent, b - 16])), 
+        a = cljs.core.next.call(null, d), d = null, e = 0), f = 0;
+      } else {
+        return null;
+      }
+    }
+  }
+};
 infierno.main.player = new infierno.character.Character(infierno.protocol.render_BANG_.call(null, infierno.sprite.make_sprite_BANG_.call(null, infierno.main.dom_parent, infierno.main.sprites, 4, 5, 300, 600)), new cljs.core.Keyword(null, "player", "player", -97687400), 5);
+infierno.protocol.register_shot_fn_BANG_.call(null, infierno.main.player, infierno.main.player_fire_shot_BANG_);
 infierno.main.record_frame_completion = function() {
   return cljs.core.swap_BANG_.call(null, infierno.main.renders, cljs.core.conj, Date.now());
 };
@@ -21990,13 +22028,24 @@ infierno.main.animate = function animate() {
   }
   infierno.main.record_frame_completion.call(null);
   b = infierno.controller.get_input.call(null);
-  cljs.core.truth_(b) && infierno.protocol.control_move.call(null, infierno.main.player, b, infierno.main.parent_max_x, infierno.main.parent_max_y);
-  for (b = 0;;) {
-    if (infierno.protocol.move_frame.call(null, cljs.core.deref.call(null, infierno.bullet.enemy_bullets)[b]), cljs.core.truth_(infierno.protocol.collides_with.call(null, cljs.core.deref.call(null, infierno.bullet.enemy_bullets)[b], infierno.main.player)) && (new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1((new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(infierno.main.player)).style.setProperty("background-color", 
-    "red"), b < cljs.core.deref.call(null, infierno.bullet.enemy_bullets).length - 1) {
-      b += 1;
-    } else {
-      break;
+  cljs.core.truth_(b) && (infierno.protocol.control_move_BANG_.call(null, infierno.main.player, b, infierno.main.parent_max_x, infierno.main.parent_max_y), cljs.core.truth_((new cljs.core.Keyword(null, "shot", "shot", 1961298790)).cljs$core$IFn$_invoke$arity$1(b)) && infierno.protocol.shoot_BANG_.call(null, infierno.main.player));
+  if (0 !== cljs.core.deref.call(null, infierno.bullet.enemy_bullets).length) {
+    for (b = 0;;) {
+      if (infierno.protocol.move_frame.call(null, cljs.core.deref.call(null, infierno.bullet.enemy_bullets)[b]), cljs.core.truth_(infierno.protocol.collides_with.call(null, cljs.core.deref.call(null, infierno.bullet.enemy_bullets)[b], infierno.main.player)) && (new cljs.core.Keyword(null, "dom-element", "dom-element", -1359955914)).cljs$core$IFn$_invoke$arity$1((new cljs.core.Keyword(null, "sprite", "sprite", 172516848)).cljs$core$IFn$_invoke$arity$1(infierno.main.player)).style.setProperty("background-color", 
+      "red"), b < cljs.core.deref.call(null, infierno.bullet.enemy_bullets).length - 1) {
+        b += 1;
+      } else {
+        break;
+      }
+    }
+  }
+  if (0 !== cljs.core.deref.call(null, infierno.bullet.friendly_bullets).length) {
+    for (b = 0;;) {
+      if (infierno.protocol.move_frame.call(null, cljs.core.deref.call(null, infierno.bullet.friendly_bullets)[b]), b < cljs.core.deref.call(null, infierno.bullet.friendly_bullets).length - 1) {
+        b += 1;
+      } else {
+        break;
+      }
     }
   }
   .05 > Math.random() && infierno.bullet.reap_bullets_BANG_.call(null, infierno.main.parent_max_x, infierno.main.parent_max_y);
